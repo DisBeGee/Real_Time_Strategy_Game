@@ -424,7 +424,22 @@ if (is_built == false)
         mask_height = bbox_bottom-bbox_top
         //as_map_setrectangle(obj_map.map,bbox_left/64,bbox_top/32,mask_width/64,mask_height/32,-1)
         //as_map_setcell(obj_map.map,x/64,y/32,-1)
-    
+        /*
+        for (i=bbox_left;i&lt;bbox_right;i+=obj_map.map_col_width) {
+            for (z=bbox_top;z&lt;bbox_bottom;z+=obj_map.map_row_height) {
+            
+                //if (instance_position(i,z,id) = id) {
+                if position_meeting(i,z,id) {
+                
+                    //One for floor, one for ceiling
+                    as_map_setcell(obj_map.map,floor(i/obj_map.map_col_width),z/obj_map.map_row_height,-1)
+                    as_map_setcell(obj_map.map,ceil(i/obj_map.map_col_width),z/obj_map.map_row_height,-1)
+                
+                }
+            }
+        }*/
+    }
+    else if (build_progress &gt; 0) {
         for (i=bbox_left;i&lt;bbox_right;i+=obj_map.map_col_width) {
             for (z=bbox_top;z&lt;bbox_bottom;z+=obj_map.map_row_height) {
             
@@ -599,7 +614,7 @@ if (team == ENEMY ) {
 //depth = -y
 
 //Handles depth if currently looking
-if (!is_built &amp;&amp; !is_placed) {
+if (!is_built || !is_placed) {
     if (collision_point(mouse_x,mouse_y,EntireCliffs,true,true)) {
         cliff_sight = true;
     }     
