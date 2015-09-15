@@ -299,7 +299,7 @@ created_from_unit = false;
 
 
 //if (!object_is_ancestor(self.object_index,obj_enem_parent) &amp;&amp; is_built)
-if (team != ENEMY)
+if (team != ENEMY &amp;&amp; build_progress &gt; 0)
 {
 
     surface_set_target(global.fog);
@@ -439,7 +439,10 @@ if (is_built == false)
             }
         }*/
     }
-    else if (build_progress &gt; 0) {
+    else if (build_progress &gt; 10) {
+        
+        cliff_sight = true;
+    
         for (i=bbox_left;i&lt;bbox_right;i+=obj_map.map_col_width) {
             for (z=bbox_top;z&lt;bbox_bottom;z+=obj_map.map_row_height) {
             
@@ -459,6 +462,7 @@ if (is_built == false)
 //If building was created through room editor and not through unit
 if (!created_from_unit &amp;&amp; is_built &amp;&amp; is_placed) {
     created_from_unit = !created_from_unit
+    build_progress = build_time
     //Handles fog of war
     if (collision_point(x,y,EntireCliffs,true,true)) {
         cliff_sight = true;
@@ -567,6 +571,7 @@ if (team == ENEMY ) {
             if (global._id.team == ALLY) {
                 ghost_building = instance_create(x,y,obj_ghost_building)
                 ghost_building.sprite_copy = sprite_index
+                ghost_building.sprite_copy_sub = image_index
                 break;
             }
         } 
@@ -619,6 +624,16 @@ if (!is_built || !is_placed) {
         cliff_sight = true;
     }     
 }
+
+//Handles movement of other units if in the way
+if (is_placed &amp;&amp; build_progress &gt; 0) {
+    build_progress = 0
+    while (all_collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)) {
+        global._id.collide_building = id //Name of the variable with unit\
+        global._id.alarm[4] = 1;
+    }
+}
+
 if cliff_sight {
     depth = -y-room_height
 }
@@ -933,6 +948,8 @@ if is_built = false &amp;&amp; is_placed = true
 if is_built = true &amp;&amp; is_placed = true
 {
     //depth = building_depth;
+    draw_set_blend_mode(bm_normal)
+    draw_set_alpha(1)
     draw_sprite(g_built,-1,x,y);
     
     if (selected==true){/*depth=waypoint_depth;*/draw_sprite(waypoint_spr,-1,waypointx,waypointy);}

@@ -687,6 +687,7 @@
         <objects name="Base">
           <objects name="Template">
             <object>objects\obj_building_template_multi</object>
+            <object>objects\obj_building_parent_multi</object>
           </objects>
           <object>objects\obj_building_example_multi</object>
           <object>objects\obj_building_forge</object>

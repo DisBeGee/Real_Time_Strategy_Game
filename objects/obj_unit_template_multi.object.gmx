@@ -350,6 +350,8 @@ sprite_bbox_left = x - sprite_width/2
 sprite_bbox_right = x + sprite_width/2
 sprite_bbox_top = y - sprite_height/2
 sprite_bbox_bottom = y + sprite_height/2
+
+collide_building = 0;
 </string>
           </argument>
         </arguments>
@@ -739,7 +741,17 @@ if selected = true &amp;&amp; iscratorer = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>collide_building = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_building_parent_multi,false,true)
+
+if (!collide_building) {
+    speed = 0
+    able_to_move = false
+    exit;
+}
+
+
+alarm[4] = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -1238,8 +1250,13 @@ if (able_to_move == true &amp;&amp; attack_mode == false &amp;&amp; build_ing ==
 collide = 0
 collide = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)
 
-//If you aint colliding or purposely moving
+//New ifs for collision_building
 
+if (!collide &amp;&amp; collide_building) {
+    collide = collide_building
+}
+
+//If you aint colliding or purposely moving
 if (!collide &amp;&amp; !able_to_move) {
     //U aint doin SHIT
     speed = 0
@@ -1322,6 +1339,7 @@ if (able_to_move) {
     
     //Else if it NOT colliding but still moving... stuck in speed loop; knock it out
     //Also must throw in !just_created because freshly created units were having issues
+    //Also must throw in !collide_building to not... break... anything
     else if (!collide &amp;&amp; !just_created) {
         move_x = x
         move_y = y
