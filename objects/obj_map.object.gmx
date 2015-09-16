@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>map_col_width = 32
 map_row_height = 32
-debug = true
+debug = false
 
 map =  as_map_create(room_width/map_col_width, room_height/map_row_height, 1);
 

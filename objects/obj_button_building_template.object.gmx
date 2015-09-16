@@ -175,6 +175,7 @@ if (keyboard_check_pressed(ord(hotkey)))
                 ternmp.is_placed = false;
                 ternmp.is_built = false;
                 ternmp.created_from_unit = true;
+                ternmp.unit_creating = obj_HUD.target
                 prev_build = ternmp;
             }
         }
@@ -286,6 +287,8 @@ if (obj_resource_manager.res1 &gt;= rcost1 &amp;&amp;
             ternmp = instance_create(-100,-100,global.obj_building_type[building_type,global.PlayerId]);
             ternmp.is_placed = false;
             ternmp.is_built = false;
+            ternmp.unit_creating = obj_HUD.target
+
             prev_build = ternmp;
         }
     }

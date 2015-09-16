@@ -234,6 +234,9 @@ ghost_building = -1
 able_to_move = false
 
 created_from_unit = false;
+building_started = false
+
+first_peon = 0
 </string>
           </argument>
         </arguments>
@@ -463,6 +466,7 @@ if (is_built == false)
 if (!created_from_unit &amp;&amp; is_built &amp;&amp; is_placed) {
     created_from_unit = !created_from_unit
     build_progress = build_time
+    building_started = true
     //Handles fog of war
     if (collision_point(x,y,EntireCliffs,true,true)) {
         cliff_sight = true;
@@ -626,7 +630,7 @@ if (!is_built || !is_placed) {
 }
 
 //Handles movement of other units if in the way
-if (is_placed &amp;&amp; build_progress &gt; 0) {
+if (is_placed &amp;&amp; build_progress &gt; 0 &amp;&amp; !building_started) {
     
     while (all_collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)) {
         var freeze, build_id
@@ -645,11 +649,20 @@ if (is_placed &amp;&amp; build_progress &gt; 0) {
     }
 }
 
-if cliff_sight {
-    depth = -y-room_height
+if (build_progress &gt; 0) {
+    building_started = true;
+}
+
+if (!building_started) {
+    depth = -9000003
 }
 else {
-    depth = -y
+    if cliff_sight {
+        depth = -y-room_height
+    }
+    else {
+        depth = -y
+    }
 }
 </string>
           </argument>
@@ -759,6 +772,14 @@ if is_placed = false
         write_ubyte(global.ServerSocket,global.PlayerId); //owner
         write_short(global.ServerSocket,place_x); // x create
         write_short(global.ServerSocket,place_y); // y create
+        
+        // Make unit go to this thingy
+        unit_creating.selected = true
+        global.number_of_selected += 1;
+        unit_creating.move_x = mouse_x
+        unit_creating.move_y = mouse_y
+        unit_creating.able_to_move = true
+        unit_creating.alarm[5] = 5
         
         // destroy object
         if selected = true 
@@ -953,7 +974,14 @@ if global.placingBuilding == true {
 if is_built = false &amp;&amp; is_placed = true
 {
     //depth = building_depth;
+    if (build_progress &gt; 0) {
+        draw_set_alpha(1)
+    }
+    else {
+        draw_set_alpha(0.5)
+    }
     draw_sprite(g_building,floor((build_progress/build_time)*g_build_num),x,y);
+    draw_set_alpha(1)
 }
 
 if is_built = true &amp;&amp; is_placed = true
