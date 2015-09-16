@@ -627,10 +627,21 @@ if (!is_built || !is_placed) {
 
 //Handles movement of other units if in the way
 if (is_placed &amp;&amp; build_progress &gt; 0) {
-    build_progress = 0
+    
     while (all_collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)) {
-        global._id.collide_building = id //Name of the variable with unit\
-        global._id.alarm[4] = 1;
+        var freeze, build_id
+        freeze = false
+        build_id = id
+        with (global._id) {
+            if (collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,build_id,true,true)) {
+            global._id.collide_building = id //Name of the variable with unit\
+            global._id.alarm[4] = 1;
+            freeze = true
+            }
+        }
+        if (freeze) {
+            build_progress = 0;
+        }
     }
 }
 

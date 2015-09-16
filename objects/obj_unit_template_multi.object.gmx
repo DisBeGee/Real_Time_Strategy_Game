@@ -1406,7 +1406,7 @@ if attack_target != 99 //setting unit into attack mode
 //If target is already found, then initiate aggro sequence (if target is close range)
 if attack_mode = true &amp;&amp; distance_to_object(attack_target) &gt; attack_range &amp;&amp; casting == false &amp;&amp; cast==false
 {
-    //mp_potential_step(attack_target.x,attack_target.y,unit_speed,false);
+
     
     if alarm[6] = 0 &amp;&amp; attack_target.able_to_move{ //if enemy unit is constantly moving
         move_x = attack_target.x
@@ -1831,30 +1831,33 @@ if iscratorer = true
         {
             if build_target.is_built = false
             {
-                if distance_to_object(build_target) &lt;= 2
+                if !collide_building
                 {
-                    state = 6;
-                    move_x = x;
-                    move_y = y;
-                    alarm[6] = 1;
-                    able_to_move = false
-                    if (ownerId == global.PlayerId) // Network
+                    if distance_to_object(build_target) &lt;= 2
                     {
-                        direction = point_direction(x,y,build_target.x,build_target.y)
-                        build_target.build_progress += build_power;
+                        state = 6;
+                        move_x = x;
+                        move_y = y;
+                        alarm[6] = 1;
+                        able_to_move = false
+                        if (ownerId == global.PlayerId) // Network
+                        {
+                            direction = point_direction(x,y,build_target.x,build_target.y)
+                            build_target.build_progress += build_power;
+                        }
                     }
+                    
+                    else
+                    {
+                        state = 1;
+                        move_x = buildn_x;
+                        move_y = buildn_y;
+                        alarm[6] = 1
+                        able_to_move = true
+                        //mp_potential_step(buildn_x,buildn_y,unit_speed,false);
+                        DEBUGTESTVARIABLE = 0;
+                    } 
                 }
-                
-                else
-                {
-                    state = 1;
-                    move_x = buildn_x;
-                    move_y = buildn_y;
-                    alarm[6] = 1
-                    able_to_move = true
-                    //mp_potential_step(buildn_x,buildn_y,unit_speed,false);
-                    DEBUGTESTVARIABLE = 0;
-                } 
                 
             }
             else
@@ -1942,41 +1945,6 @@ if (cast = true)
     }
 }
 //Casting - end
-
-//Unit bumping (so they dont pile up on each other) - start
-/* THIS WAS CAUSING WAY TOO MUCH SLOWDOWN, SO I PUT IT IN ALARM 4!!!!
-if (_prevx = x &amp;&amp; _prevy = y)
-{
-    instance_deactivate_object(self);
-    ally_nrst = instance_nearest(x, y+y_offset, all);
-    instance_activate_object(self);
-    if (instance_exists(ally_nrst))
-    {
-        if (distance_to_point(ally_nrst.x, ally_nrst.y)&lt;=foot_radius)
-        {
-            anglay = point_direction(ally_nrst.x, ally_nrst.y, x, y+y_offset); // this is in degress
-            anglay_r = (anglay*pi)/180; //convert to radians
-            goto_x = x + push_rate*(cos(anglay_r));
-            goto_y = y + push_rate*(-sin(anglay_r));
-            temp_len_x = foot_radius*(cos(pi/2));
-            temp_len_y = foot_radius*(-sin(pi/2))
-            if ((place_free(goto_x+temp_len_x, goto_y+temp_len_y))&amp;&amp;
-                (place_free(goto_x+temp_len_x, goto_y-temp_len_y))&amp;&amp;
-                (place_free(goto_x-temp_len_x, goto_y+temp_len_y))&amp;&amp;
-                (place_free(goto_x-temp_len_x, goto_y-temp_len_y)))
-            {
-                x = goto_x;
-                y = goto_y;
-            }
-        }
-    }
-}
-_prevx = x;
-_prevy = y;
-*/
-//Unit bumping (so they dont pile up on each other) - start
-
-
 
 
 //Check if stunned or similar - end
