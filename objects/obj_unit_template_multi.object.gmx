@@ -1829,6 +1829,7 @@ if iscratorer = true
     {
         if instance_exists(build_target)
         {
+            build_target.unit_creating = id
             if build_target.is_built = false
             {
                 if !collide_building

@@ -236,7 +236,7 @@ able_to_move = false
 created_from_unit = false;
 building_started = false
 
-first_peon = 0
+unit_creating = 0
 </string>
           </argument>
         </arguments>
@@ -350,6 +350,8 @@ if (team != ENEMY &amp;&amp; build_progress &gt; 0)
 }
 
 // Fog of War Minimap - End
+
+
 
 
 // Health - start
@@ -630,6 +632,7 @@ if (!is_built || !is_placed) {
 }
 
 //Handles movement of other units if in the way
+//If PUT DOWN &amp; ATTEMPTING TO START BUT BUILDING HAS NOT BEEN STARTED
 if (is_placed &amp;&amp; build_progress &gt; 0 &amp;&amp; !building_started) {
     
     while (all_collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)) {
@@ -649,12 +652,24 @@ if (is_placed &amp;&amp; build_progress &gt; 0 &amp;&amp; !building_started) {
     }
 }
 
+//If successfully started building with no obstacles
 if (build_progress &gt; 0) {
     building_started = true;
 }
 
+//If the ghost is down
 if (!building_started) {
     depth = -9000003
+    // If unit creating is not going to this buildling when placed
+    if (is_placed) {
+        if instance_exists(unit_creating) {
+            //If the unit creating this thing cancelled the walk
+            if (!unit_creating.build_ing) {
+                //Refund resources
+                instance_destroy()
+            }
+        }
+    }
 }
 else {
     if cliff_sight {
@@ -755,7 +770,7 @@ if is_placed = false
     if place_yes = true
     {
     
-//        global.buildingbuilding = true;
+        global.buildingbuilding = true;
         // old non-multiplayer
         /*is_placed = true;
         x = place_x;
@@ -843,6 +858,9 @@ if is_placed = true
     {
         selected = true;
         global.number_of_selected +=1;
+    }
+    else if (global.buildingbuilding) {
+        global.buildingbuilding = false
     }
 }
 // Selection - end
@@ -978,6 +996,9 @@ if is_built = false &amp;&amp; is_placed = true
         draw_set_alpha(1)
     }
     else {
+        if (team = ENEMY) {
+            exit;
+        }
         draw_set_alpha(0.5)
     }
     draw_sprite(g_building,floor((build_progress/build_time)*g_build_num),x,y);
