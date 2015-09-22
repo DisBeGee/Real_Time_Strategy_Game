@@ -419,10 +419,7 @@ if (is_built == false)
             }
         }   
         
-        //Handles fog of war
-        if (collision_point(x,y,EntireCliffs,true,true)) {
-            cliff_sight = true;
-        }     
+
         
         //Set up ASTAR collision
         mask_width = bbox_right-bbox_left
@@ -446,7 +443,10 @@ if (is_built == false)
     }
     else if (build_progress &gt; 10) {
         
-        cliff_sight = true;
+        //Handles fog of war
+        if (collision_point(x,y,EntireCliffs,true,true)) {
+            cliff_sight = true;
+        }     
     
         for (i=bbox_left;i&lt;bbox_right;i+=obj_map.map_col_width) {
             for (z=bbox_top;z&lt;bbox_bottom;z+=obj_map.map_row_height) {
