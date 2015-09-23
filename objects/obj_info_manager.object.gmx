@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/* - setup - */
-/*var*/ namex = 439; //the xposition of where you want the name to be displayed
-/*var*/ namey = obj_HUD.ypos; //the yposition of where you want the name to be displayed
+/*var*/ namex = 650; //the xposition of where you want the name to be displayed
+/*var*/ namey = obj_HUD.ypos + 160; //the yposition of where you want the name to be displayed
 /*var*/ picx = 795; //the co-ordinates for the picture of the unit selected
 /*var*/ picy = obj_HUD.ypos;
 /*var*/ 
@@ -88,6 +88,8 @@
             <string>if global.number_of_selected = 1 &amp;&amp; instance_exists(obj_HUD.target)
 {
     //draw_set_font(pros only mate); for custom font
+    draw_set_font(font_equestria)
+    draw_set_color(c_orange)
     draw_text(view_xview[0]+namex-(string_width(obj_HUD.target.unit_name)/2),view_yview[0]+namey-(string_height(obj_HUD.target.unit_name)/2),obj_HUD.target.unit_name);
     draw_sprite(obj_HUD.target.unit_pic,-1,view_xview[0]+picx,view_yview[0]+picy);
     
