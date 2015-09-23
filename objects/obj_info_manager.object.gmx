@@ -28,8 +28,8 @@
             <string>/* - setup - */
 /*var*/ namex = 650; //the xposition of where you want the name to be displayed
 /*var*/ namey = obj_HUD.ypos + 160; //the yposition of where you want the name to be displayed
-/*var*/ picx = 795; //the co-ordinates for the picture of the unit selected
-/*var*/ picy = obj_HUD.ypos;
+/*var*/ picx = 880; //the co-ordinates for the picture of the unit selected
+/*var*/ picy = obj_HUD.ypos + 136;
 /*var*/ 
 /*var*/ 
 /*var*/ 
@@ -37,32 +37,48 @@
 /*var*/ 
 /*var*/ 
 // - buildings only - //
-/*var*/ building_progx = 439; // co-ordinates for por bar when the building is being buiklt
-/*var*/ building_progy = obj_HUD.ypos; 
-/*var*/ making_progx = 450; //coordinates for prog bar when making units
-/*var*/ making_progy = obj_HUD.ypos;
+/*var*/ building_progx = 650; // co-ordinates for por bar when the building is being buiklt
+/*var*/ building_progy = obj_HUD.ypos + 210; 
+/*var*/ making_progx = 661; //coordinates for prog bar when making units
+/*var*/ making_progy = obj_HUD.ypos + 215;
 /*var*/ prog_img_num = 138; //nuber of images in the progress bar
 /*var*/ prog_spr = spr_progressbar;
-/*var*/ buildq_namex = 439; // the x/y coordinates for the name that comes up when making units
-/*var*/ buildq_namey = obj_HUD.ypos;
+/*var*/ buildq_namex = 653; // the x/y coordinates for the name that comes up when making units
+/*var*/ buildq_namey = obj_HUD.ypos + 217;
 /*var*/ 
 /*var*/ 
 /*var*/ 
 // - Build Queue - Prite Positioning - //
-/*var*/ hud_buildq_curx = 328;
-/*var*/ hud_buildq_s1x = 290;
-/*var*/ hud_buildq_s2x = 340;
-/*var*/ hud_buildq_s3x = 390;
-/*var*/ hud_buildq_s4x = 440;
-/*var*/ hud_buildq_s5x = 490;
-/*var*/ hud_buildq_s6x = 540;
-/*var*/ hud_buildq_cury = 497;
-/*var*/ hud_buildq_s1y = 547;
-/*var*/ hud_buildq_s2y = 547;
-/*var*/ hud_buildq_s3y = 547;
-/*var*/ hud_buildq_s4y = 547;
-/*var*/ hud_buildq_s5y = 547;
-/*var*/ hud_buildq_s6y = 547;
+
+//*var*/ hud_buildq_curx = 328;
+//*var*/ hud_buildq_s1x = 290;
+//*var*/ hud_buildq_s2x = 340;
+//*var*/ hud_buildq_s3x = 390;
+//*var*/ hud_buildq_s4x = 440;
+//*var*/ hud_buildq_s5x = 490;
+//*var*/ hud_buildq_s6x = 540;
+//*var*/ hud_buildq_cury = 497;
+//*var*/ hud_buildq_s1y = 547;
+//*var*/ hud_buildq_s2y = 547;
+//*var*/ hud_buildq_s3y = 547;
+//*var*/ hud_buildq_s4y = 547;
+//*var*/ hud_buildq_s5y = 547;
+//*var*/ hud_buildq_s6y = 547;
+
+/*var*/ hud_buildq_curx = 533;
+/*var*/ hud_buildq_s1x = 490 + 10;
+/*var*/ hud_buildq_s2x = 540 + 10;
+/*var*/ hud_buildq_s3x = 590 + 10;
+/*var*/ hud_buildq_s4x = 640 + 10;
+/*var*/ hud_buildq_s5x = 690 + 10;
+/*var*/ hud_buildq_s6x = 740 + 10;
+/*var*/ hud_buildq_cury = obj_HUD.ypos + 177;
+/*var*/ hud_buildq_s1y = 837;
+/*var*/ hud_buildq_s2y = 837;
+/*var*/ hud_buildq_s3y = 837;
+/*var*/ hud_buildq_s4y = 837;
+/*var*/ hud_buildq_s5y = 837;
+/*var*/ hud_buildq_s6y = 837;
 </string>
           </argument>
         </arguments>
@@ -89,7 +105,7 @@
 {
     //draw_set_font(pros only mate); for custom font
     draw_set_font(font_equestria)
-    draw_set_color(c_orange)
+    draw_set_color(c_red)
     draw_text(view_xview[0]+namex-(string_width(obj_HUD.target.unit_name)/2),view_yview[0]+namey-(string_height(obj_HUD.target.unit_name)/2),obj_HUD.target.unit_name);
     draw_sprite(obj_HUD.target.unit_pic,-1,view_xview[0]+picx,view_yview[0]+picy);
     
@@ -102,6 +118,8 @@
         if obj_HUD.target.is_built = true &amp;&amp; obj_HUD.target.make_time = true
         {
             draw_sprite(prog_spr,(obj_HUD.target.make_progress/obj_HUD.target.make_limit)*prog_img_num,view_xview[0]+making_progx,view_yview[0]+making_progy);
+            draw_set_font(font_equestria_smaller)
+            draw_set_color(c_teal)
             draw_text(view_xview[0]+buildq_namex-(string_width(obj_HUD.target.buildq_cur_n)/2),view_yview[0]+buildq_namey,obj_HUD.target.buildq_cur_n)
             draw_sprite(obj_HUD.target.buildq_cur_i,-1,view_xview[0]+hud_buildq_curx,view_yview[0]+hud_buildq_cury);
             if (obj_HUD.target.buildq_trans_s1 != 99){draw_sprite(obj_HUD.target.buildq_trans_s1_i,-1,view_xview[0]+hud_buildq_s1x,view_yview[0]+hud_buildq_s1y);}

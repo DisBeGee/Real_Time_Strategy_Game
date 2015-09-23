@@ -411,6 +411,7 @@
   <fonts name="fonts">
     <font>fonts\font_chat_message</font>
     <font>fonts\font_equestria</font>
+    <font>fonts\font_equestria_smaller</font>
   </fonts>
   <objects name="objects">
     <objects name="Buttons">

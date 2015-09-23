@@ -185,8 +185,7 @@ if view_yview[0]+view_hview &gt; room_height+hud_buffer { view_yview[0] = room_h
 room_caption = string(fps);
 
 
-//FPS debug
-draw_text(view_xview[0] + 100, view_yview[0] + 100, "FPS = " + string(fps_real));
+
 //GridDEBUG
 /*
 draw_set_alpha(0.3);

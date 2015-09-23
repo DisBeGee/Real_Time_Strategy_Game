@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>// setup - start
-message_x = 254; //xposition of the message, relative to the view port
-message_y = 400; //xposition of the message, relative to the view port
+message_x = 600; //xposition of the message, relative to the view port
+message_y = obj_HUD.ypos; //xposition of the message, relative to the view port
 message_ygap = 19; //y - gap between texts
 message_queue[0] = 99 //this array holds the list of messages to show
 message_queue_life[0] = 99; //How long each message in queue has left to live
@@ -48,7 +48,8 @@ for (i=0;i&lt;message_cap;i+=1)
 for (i=0;i&lt;message_cap;i+=1)
 {
     message_queue_life[i] = "99";
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

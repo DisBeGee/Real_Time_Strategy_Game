@@ -78,7 +78,11 @@ if (global.multiplayer_game)
             <kind>1</kind>
             <string>//draw hud - start
 draw_sprite(hud_spr,-1,view_xview[0]+xpos,view_yview[0]+ypos);
-//draw hud - end</string>
+//draw hud - end
+
+//FPS debug
+draw_text(view_xview[0] + 100, view_yview[0] + 100, "FPS = " + string(fps_real));
+</string>
           </argument>
         </arguments>
       </action>
