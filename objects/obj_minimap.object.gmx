@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>/* - Setup - */
-/* var */ xpos = 8; //the x pos of it on the screen
-/* var */ ypos = obj_HUD.ypos; //the y pos of it on the screen
-/* var */ length = 178; // length of the minimap
-/* var */ height = 150; // height of the minimap
+/* var */ xpos = 218; //the x pos of it on the screen
+/* var */ ypos = obj_HUD.ypos + 95; //the y pos of it on the screen
+/* var */ length = 193; // length of the minimap
+/* var */ height = 152; // height of the minimap
 /* var */ ally_col = c_blue; //color of ally dots
 /* var */ enem_col = c_red; //color of enemy dots
 /* var */ cliff_col = c_gray;

@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>// - Setup - //
 /*var*/ has_created = false;
-/*var*/ buttons_x = 950; // the top corner of where the buttons will be
-/*var*/ buttons_y = obj_HUD.ypos+10; // the top corner of where the buttons will be
+/*var*/ buttons_x = 1110; // the top corner of where the buttons will be
+/*var*/ buttons_y = obj_HUD.ypos+110; // the top corner of where the buttons will be
 /*var*/ display = false;
 /*var*/ unit_display = 99;
 /*var*/ 
