@@ -72,7 +72,7 @@ if (instance_exists(obj_building_template_multi)) {
   </views>
   <instances>
     <instance objName="obj_map" x="0" y="0" name="inst_CB23A594" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="EntireCliffs" x="0" y="0" name="inst_ED43C945" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="EntireCliffs" x="0" y="0" name="inst_ED43C945" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="CliffSidesLeft" x="1312" y="2352" name="inst_F95B0CDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="CliffSidesLeft" x="2080" y="2928" name="inst_A63A4363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="CliffSidesLeft" x="2048" y="2944" name="inst_F9E36974" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -964,6 +964,21 @@ if (instance_exists(obj_building_template_multi)) {
     <instance objName="obj_p0_unit_rangedhorse" x="1344" y="2608" name="inst_608632F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_p0_unit_rangedhorse" x="1216" y="2736" name="inst_E0DEBCD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_p1_unit_workhorse" x="2080" y="1248" name="inst_7C5C6131" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2144" y="2704" name="inst_FAA76131" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2256" y="2688" name="inst_32439E34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2064" y="2688" name="inst_9189138C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2192" y="2512" name="inst_94724DA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2352" y="2544" name="inst_59175361" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2048" y="2544" name="inst_33683E9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2368" y="2672" name="inst_39C15D31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2160" y="2608" name="inst_A7778130" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2080" y="2608" name="inst_871EA4F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2256" y="2608" name="inst_85E8FF36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="1984" y="2608" name="inst_EB5B5DE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2064" y="2736" name="inst_D43BF71D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2176" y="2720" name="inst_7376206B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2288" y="2704" name="inst_B16FCD04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="TreeResource" x="2272" y="2512" name="inst_147755D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="Immoveable" x="448" y="80" w="32" h="63" xo="64" yo="128" id="10001195" name="tile_B3EC2941" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
