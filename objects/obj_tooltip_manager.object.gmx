@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-9000003</depth>
+  <depth>-9000005</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>/* - Setup - */
 /*var*/ active = false
-/*var*/ xwidth = 275 //width of tooltip box
-/*var*/ xpos = 747 //x position
-/*var*/ ypos = 433 // y position
+/*var*/ xwidth = 300 //width of tooltip box
+/*var*/ xpos = mouse_x - view_xview[0] //x position
+/*var*/ ypos = mouse_y - view_yview[0] // y position
 /*var*/ text[0] = ""
 /*var*/ text[1] = ""
 /*var*/ text[2] = ""
@@ -65,7 +65,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>active = false
+            <string>xpos = mouse_x - view_xview[0]
+ypos = mouse_y - view_yview[0]
+
+active = false
 </string>
           </argument>
         </arguments>
@@ -91,6 +94,7 @@
             <string>if (active)
 {
     //calc area
+    draw_set_font(font_equestria_smaller)
     rows = (text_used-1);
     height = string_height("tg");
     for (i=0;i&lt;text_used;i+=1)

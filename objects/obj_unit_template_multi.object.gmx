@@ -1851,9 +1851,11 @@ if iscratorer = true
                     else
                     {
                         state = 1;
-                        move_x = buildn_x;
-                        move_y = buildn_y;
-                        alarm[6] = 1
+                        if (move_x != buildn_x || move_y != buildn_y) {
+                            move_x = buildn_x;
+                            move_y = buildn_y;
+                            alarm[6] = 1
+                        }
                         able_to_move = true
                         //mp_potential_step(buildn_x,buildn_y,unit_speed,false);
                         DEBUGTESTVARIABLE = 0;
