@@ -149,7 +149,11 @@ if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+len
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+length) &amp;&amp; mouse_y &gt;= (view_yview+ypos+10) &amp;&amp; mouse_y &lt;= (view_yview+ypos+height+10)
+            <string>if (instance_exists(obj_selector)) {
+    if (obj_selector.draw) {exit}
+}
+
+if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+length) &amp;&amp; mouse_y &gt;= (view_yview+ypos+10) &amp;&amp; mouse_y &lt;= (view_yview+ypos+height+10)
 {
 
     x_mouse = display_mouse_get_x() - window_get_x();

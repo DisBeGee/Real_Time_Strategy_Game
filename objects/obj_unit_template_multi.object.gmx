@@ -2132,7 +2132,8 @@ if (global.PlayerId = ownerId) // if is player owns this unit
             <kind>1</kind>
             <string>if (global.PlayerId != ownerId) { exit; } //check that player owns unit
 //if mouse is not in hud - start
-if ((mouse_y - view_yview[0]) &lt;= obj_HUD.border) &amp;&amp; (obj_minimap.active==false)
+//if ((mouse_y - view_yview[0]) &lt;= obj_HUD.border) &amp;&amp; (obj_minimap.active==false)
+if (obj_minimap.active==false)
 {
 
 
