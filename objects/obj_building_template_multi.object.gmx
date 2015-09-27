@@ -629,6 +629,9 @@ if (!is_built || !is_placed) {
     if (collision_point(mouse_x,mouse_y,EntireCliffs,true,true)) {
         cliff_sight = true;
     }     
+    else {
+        cliff_sight = false;
+    }
 }
 
 //Handles movement of other units if in the way

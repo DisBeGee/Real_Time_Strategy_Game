@@ -353,6 +353,8 @@ sprite_bbox_bottom = y + sprite_height/2
 
 collide_building = 0;
 toggle_resource = false
+switch_to_resource = false
+collide_gathering = 0
 </string>
           </argument>
         </arguments>
@@ -746,8 +748,15 @@ if selected = true &amp;&amp; iscratorer = true
           <argument>
             <kind>1</kind>
             <string>collide_building = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_building_parent_multi,false,true)
+collide_gathering = 0
+while (all_collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)) {
+    if (global._id.collecting) {
+        collide_gathering = global._id
+    }
+}
 
-if (!collide_building) {
+
+if (!collide_building &amp;&amp; !collide_gathering) {
     speed = 0
     able_to_move = false
     exit;
@@ -1259,7 +1268,11 @@ collide = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_p
 if (!collide &amp;&amp; collide_building) {
     collide = collide_building
 }
-
+/* //Different approach to gathering
+if (collide_gathering) {
+    collide = collide_gathering
+}
+*/
 //If you aint colliding or purposely moving
 if (!collide &amp;&amp; !able_to_move) {
     //U aint doin SHIT
@@ -1303,6 +1316,9 @@ if (collide &amp;&amp; !able_to_move &amp;&amp; !gathering) {
     move_towards_point(coll_x, coll_y, unit_speed);
     unit_speed = temp
     state = 1
+    if (gathering) {
+        state = 5
+    }
 
 }
 
@@ -1605,7 +1621,7 @@ if ispeon = true &amp;&amp; gathering = true
 {
     if holding_resources = true //If currently collecting / Going to base -- Start
     {
-        if grout_collect &lt; res_hold_lim //Currently collecting
+        if grout_collect &lt; res_hold_lim //Currently collecting / Have some mats but need to fill up
         {
             if instance_exists(grout_target)
             {
@@ -1613,12 +1629,23 @@ if ispeon = true &amp;&amp; gathering = true
                 move_y = res_y;
                 able_to_move = true;
                 collecting = true; // New - For Network
-                if distance_to_object(grout_target) &lt;= grout_target.area_size
+                if distance_to_object(grout_target) &lt;= grout_target.area_size //Currently collecting
                 {
-                    if (!toggle_resource) {grout_target.num_harvesting++; toggle_resource = true} // Boolean to determine how many harvesters on one resource
-                    able_to_move = false;
+                    // Boolean to determine how many harvesters on one resource
+                    if (!toggle_resource) {grout_target.num_harvesting++; toggle_resource = true} 
                     
+                    able_to_move = false;
                     direction = point_direction(x,y,grout_target.x,grout_target.y); //makes them look at the bloody enemy
+                    
+                    //Collision code... Inject HERE
+                    /*
+                    while (all_collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)) {
+                        if (global._id.collecting) {
+                            collide_gathering = global._id
+                            alarm[4] = 1
+                        }
+                    }
+                    */
                     
                     if can_gather = true // ACUTAL Gather Cycle *************** start
                     {
@@ -1701,6 +1728,7 @@ if ispeon = true &amp;&amp; gathering = true
                     holding_resources = false;
                     grout_collect = 0;
                     able_to_move = false;
+                    switch_to_resource = true;
                 }
             }
             if instance_exists(grout_target) {
@@ -1717,6 +1745,7 @@ if ispeon = true &amp;&amp; gathering = true
         {
             move_x = res_x;
             move_y = res_y;
+            if (switch_to_resource) {alarm[6] = 1;switch_to_resource = false}
             able_to_move = true;
             collecting = true; // New - For Network
             
@@ -1814,8 +1843,8 @@ if ispeon = true &amp;&amp; gathering = true
         }
         else
         {
-            //gathering = false;
-            //able_to_move = false;
+            gathering = false;
+            able_to_move = false;
             if instance_exists(grout_deposit) //** not checked - possible problem area   |
             {                                 //                                        \/
                 move_x = grout_deposit.x

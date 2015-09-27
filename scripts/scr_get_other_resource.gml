@@ -8,7 +8,8 @@ var obj = argument2
 var oid = argument3
 
 instance_deactivate_object(oid)
-temp = instance_nearest(ex,wy,obj)
+//temp = instance_nearest(ex,wy,obj)
+temp = instance_nearest(res_x + random(4) - random(4), res_y + random(4) - random(4), obj)    
 
 if (temp == noone) {
     instance_activate_object(oid)
