@@ -36,8 +36,8 @@
 /*var*/ res_spr_full = 0; // the image index wich show the res at max
 /*var*/ res_spr_med = 1; // the image index wich show the res at medium
 /*var*/ res_spr_low = 2; // the image index wich show the res at low
-/*var*/ 
-/*var*/ 
+/*var*/ y_offset = 46; //the y offset of the resource
+/*var*/ max_harvesting = 2
 /*var*/ 
 
 </string>

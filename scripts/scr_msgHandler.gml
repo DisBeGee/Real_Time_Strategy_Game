@@ -278,6 +278,10 @@ else if (msg==701) // destroy resource
 {
     resid = read_uint(argument1);
     
+    as_map_setcell(obj_map.map,resid.x/obj_map.map_col_width,((resid.y)/obj_map.map_row_height),1)
+    as_map_setcell(obj_map.map,(resid.x/obj_map.map_col_width)-1,((resid.y)/obj_map.map_row_height),1)
+
+    
     if instance_exists(resid) { with (resid) { instance_destroy(); } }
 }
 else if (msg==800) // initialize net id (request)

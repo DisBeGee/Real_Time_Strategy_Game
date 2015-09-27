@@ -36,6 +36,130 @@ unit_space = 75
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//DBG NEW CODE - Create paths that do not all converge on one point
+
+tempstring = "obj_p" + string(global.PlayerId) + "_unit_parent";
+tempobj = asset_get_index(tempstring);
+
+//Takes all relevant objects and put it into sortable datastructure...
+//Fix this algorithm, make it grid based similar to starcraft 2
+var selection_grid = ds_grid_create(1,global.number_of_selected)
+var k = 0
+
+with (tempobj) {
+    if (selected &amp;&amp; ispeon) {
+        ds_grid_set(selection_grid,0,k,id)
+        k++
+    }
+}
+
+if (k != global.number_of_selected) {
+    exit
+}
+
+// END SELECTION ALGORITHM
+
+tmp_res = instance_place(mouse_x,mouse_y,obj_resource_parent);
+
+var dx, dy, path
+col_width = obj_map.map_col_width
+row_height = obj_map.map_row_height
+unit_tester = ds_grid_get(selection_grid,0,0) //Gets first unit's ID
+break_for = false
+
+
+for (i = 1; i&lt;20;i++) {
+    dx = dy = i
+
+    while (dx != -dy) {
+        gx = dx + (tmp_res.x div col_width)
+        gy = dy + (tmp_res.y div row_height)
+        if (as_map_getcell(obj_map.map,gx/col_width,gx/row_height)) {
+            path = as_path_create(obj_map.map,unit_tester.x div col_width,unit_tester.y div row_height,gx, gy,1,2,-1);
+            if (as_path_length(path) &gt; 0) {
+                break;
+            }
+            as_path_destroy(path)
+        }
+        dy--
+    }
+    if (break_for) {break;}
+    
+    while (-dx != -dy) {
+        gx = dx + (tmp_res.x div col_width)
+        gy = dy + (tmp_res.y div row_height)
+        if (as_map_getcell(obj_map.map,gx/col_width,gx/row_height)) {
+            path = as_path_create(obj_map.map,unit_tester.x div col_width,unit_tester.y div row_height,gx div col_width, gy div row_height,1,2,-1);
+            if (as_path_length(path) &gt; 0) {
+                break;
+            }
+            as_path_destroy(path)
+        }
+        dx--
+    }
+    if (break_for) {break;}
+    
+    while (-dx != dy) {
+        gx = dx + (tmp_res.x div col_width)
+        gy = dy + (tmp_res.y div row_height)
+        if (as_map_getcell(obj_map.map,gx/col_width,gx/row_height)) {
+            path = as_path_create(obj_map.map,unit_tester.x div col_width,unit_tester.y div row_height,gx div col_width, gy div row_height,1,2,-1);
+            if (as_path_length(path) &gt; 0) {
+                break;
+            }
+            as_path_destroy(path)
+        }
+        dy++
+    }
+    if (break_for) {break;}
+    
+    while (dx != dy) {
+        gx = dx + (tmp_res.x div col_width)
+        gy = dy + (tmp_res.y div row_height)
+        if (as_map_getcell(obj_map.map,gx/col_width,gx/row_height)) {
+            path = as_path_create(obj_map.map,unit_tester.x div col_width,unit_tester.y div row_height,gx div col_width, gy div row_height,1,2,-1);
+            if (as_path_length(path) &gt; 0) {
+                break;
+            }
+            as_path_destroy(path)
+        }
+        dx++
+    }
+    if (break_for) {break;}
+    
+}
+
+for (i = 0; i&lt; ds_grid_height(selection_grid) ; i++) {
+    unit_inst = ds_grid_get(selection_grid,0,i)
+    unit_inst.move_x = gx * col_width
+    unit_inst.move_y = gy * row_height
+    unit_inst.alarm[5] = 1
+}
+
+
+ds_grid_destroy(selection_grid)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -330,8 +454,13 @@ alarm[1]=1;</string>
           <argument>
             <kind>1</kind>
             <string>//DBG NEW CODE - Create paths that do not all converge on one point
+if (instance_place(mouse_x,mouse_y,obj_resource_parent) &amp;&amp; global.mapMovement == 0) {
+    alarm[4] = 1 //Alarm stores algorithm for resources
+}
 
-alarm[3] = 1;
+else {
+    alarm[3] = 1; //Alarm stores algorithm for moving and attacking
+}
 /*
 tempstring = "obj_p" + string(global.PlayerId) + "_unit_parent";
 tempobj = asset_get_index(tempstring);

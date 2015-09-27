@@ -407,6 +407,7 @@
     <script>scripts\instance_nth_nearest.gml</script>
     <script>scripts\scr_spells.gml</script>
     <script>scripts\all_collision_ellipse.gml</script>
+    <script>scripts\scr_get_other_resource.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_chat_message</font>

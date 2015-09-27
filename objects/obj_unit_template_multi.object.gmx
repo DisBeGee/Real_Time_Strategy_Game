@@ -352,6 +352,7 @@ sprite_bbox_top = y - sprite_height/2
 sprite_bbox_bottom = y + sprite_height/2
 
 collide_building = 0;
+toggle_resource = false
 </string>
           </argument>
         </arguments>
@@ -543,6 +544,8 @@ if ((mouse_y - view_yview[0]) &lt;= obj_HUD.border || global.mapMovement == 1)
 if cast = false
 {
 
+
+
 /*
 //Stop the bumping fix - start
 been_bumped = false;
@@ -560,6 +563,7 @@ if selected = true
     if gathering = true
     {
         gathering = false;
+        if (toggle_resource) {grout_target.num_harvesting--; toggle_resource = !toggle_resource} // Boolean to determine how many harvesters on one resource
     }
     if build_ing = true
     {
@@ -1274,8 +1278,8 @@ if (collide) {
     temp_direction = direction
 }
 debug_var = as_map_getcell(obj_map.map,ceil(x/col_width),ceil(y/row_height));
-//If colliding with something and not moving
-if (collide &amp;&amp; !able_to_move) {
+//If colliding with something and not moving **AND NOT** gathering
+if (collide &amp;&amp; !able_to_move &amp;&amp; !gathering) {
     //If collide coords does NOT interfere with astar map
     gx = coll_x_vec + x
     gy = coll_y_vec + y 
@@ -1310,6 +1314,9 @@ if (able_to_move) {
     //Initializing to prevent error
     gox = x
     goy = y
+    
+    //DEBUG VAR
+    DEBUGVAR = as_path_length(path)
 
     //If there's still paths left
     if (as_path_length(path) &gt; 0) { 
@@ -1346,6 +1353,15 @@ if (able_to_move) {
         gox = x
         goy = y
         alarm[6] = 1 
+        able_to_move = false
+    }
+    // I don't even know anymore i"m just coding for the hell of it
+    else {
+    /*
+        gox = x
+        goy = y
+        speed = 0
+        able_to_move = false */
         able_to_move = false
     }
     
@@ -1587,9 +1603,9 @@ if attack_mode = true &amp;&amp; distance_to_object(attack_target) &lt;= attack_
 //Gathering - start
 if ispeon = true &amp;&amp; gathering = true
 {
-    if holding_resources = true
+    if holding_resources = true //If currently collecting / Going to base -- Start
     {
-        if grout_collect &lt; res_hold_lim
+        if grout_collect &lt; res_hold_lim //Currently collecting
         {
             if instance_exists(grout_target)
             {
@@ -1599,7 +1615,10 @@ if ispeon = true &amp;&amp; gathering = true
                 collecting = true; // New - For Network
                 if distance_to_object(grout_target) &lt;= grout_target.area_size
                 {
+                    if (!toggle_resource) {grout_target.num_harvesting++; toggle_resource = true} // Boolean to determine how many harvesters on one resource
                     able_to_move = false;
+                    
+                    direction = point_direction(x,y,grout_target.x,grout_target.y); //makes them look at the bloody enemy
                     
                     if can_gather = true // ACUTAL Gather Cycle *************** start
                     {
@@ -1609,42 +1628,43 @@ if ispeon = true &amp;&amp; gathering = true
                         state = 3;
                         image_index = 0;
                         image_speed = 0.5;
+                        speed = 0;
                     }     
-                        switch (grout_type) // to do with animations
-                        {
+                    switch (grout_type) // to do with animations
+                    {
                         case 0:
+                        {
+                            if state = 3 &amp;&amp; image_index = gath_spr_length
                             {
-                                if state = 3 &amp;&amp; image_index = gath_spr_length
-                                {
-                                    state = 0;
-                                    image_speed = 0;
-                                }
-                                if state = 3 &amp;&amp; image_index = gath_spr_hit
-                                {
-                                    if (ownerId == global.PlayerId) // Network
-                                    {
-                                        grout_target.resource_amount -= gather_rate;
-                                        grout_collect += gather_rate;
-                                    }
-                                }
+                                state = 0;
+                                image_speed = 0;
                             }
-                            break;
-                            case 1:
+                            if state = 3 &amp;&amp; image_index = gath_spr_hit
                             {
                                 if (ownerId == global.PlayerId) // Network
                                 {
-                                    grout_target.resource_amount -= res_hold_lim;
-                                    grout_collect += res_hold_lim;
+                                    grout_target.resource_amount -= gather_rate;
+                                    grout_collect += gather_rate;
                                 }
                             }
-                            break;
                         }
-                           // ACUTAL Gather Cycle *************** end
+                        break;
+                        case 1:
+                        {
+                            if (ownerId == global.PlayerId) // Network
+                            {
+                                grout_target.resource_amount -= res_hold_lim;
+                                grout_collect += res_hold_lim;
+                            }
+                        }
+                        break;
+                    }
+                       // ACUTAL Gather Cycle *************** end
                 }
             }
         }
         else
-        if grout_collect &gt;= res_hold_lim
+        if grout_collect &gt;= res_hold_lim //If load is full
         {
             if instance_exists(grout_deposit)
             {
@@ -1680,60 +1700,82 @@ if ispeon = true &amp;&amp; gathering = true
                     }
                     holding_resources = false;
                     grout_collect = 0;
+                    able_to_move = false;
                 }
             }
+            if instance_exists(grout_target) {
+                if (toggle_resource) {grout_target.num_harvesting--; toggle_resource = false} // Boolean to determine how many harvesters on one resource
+            }
+            toggle_resource = false
         }    
-    }
+    } //If currently collecting / Going to base - end
+    
     else
-    if holding_resources = false
+    if holding_resources = false //If moving towards resource / About to gather at point-blank- Start
     {
-        if instance_exists(grout_target)
+        if instance_exists(grout_target) &amp;&amp; grout_target != -1 //Throwing in grout_target -1 cause for some reason instancea-exists not catching it
         {
             move_x = res_x;
             move_y = res_y;
             able_to_move = true;
             collecting = true; // New - For Network
+            
+
             if distance_to_object(grout_target) &lt;= grout_target.area_size  // ACUTAL Gather Cycle *************** start
             {
-                able_to_move = false;
-                if can_gather = true
-                {
+                //If resource target has too many people harvesting it
+                if (grout_target.num_harvesting &gt;= grout_target.max_harvesting) {
+                    grout_target = scr_get_other_resource(grout_target.x,grout_target.y, grout_object, grout_target.id)
+                    if (grout_target &gt; 0) {
+                        grout_object = grout_target.object_index;
+                        res_x = grout_target.x
+                        res_y = grout_target.y
+                        move_x = res_x
+                        move_y = res_y
+                    }
+                }
+                else {
+                    if (!toggle_resource) {grout_target.num_harvesting++; toggle_resource = true} // Boolean to determine how many harvesters on one resource
                     able_to_move = false;
-                    alarm[1] = gathercooldown;
-                    can_gather = false;
-                    holding_resources = true;
-                    state = 3;
-                    image_index = 0;
-                    image_speed = 0.5;
-                }            
-                switch (grout_type) // to do with animations
-                {
-                    case 0:
+                    if can_gather = true
                     {
-                        if state = 3 &amp;&amp; image_index = gath_spr_length
+                        able_to_move = false;
+                        alarm[1] = gathercooldown;
+                        can_gather = false;
+                        holding_resources = true;
+                        state = 3;
+                        image_index = 0;
+                        image_speed = 0.5;
+                    }            
+                    switch (grout_type) // to do with animations
+                    {
+                        case 0:
                         {
-                            state = 0;
-                            image_speed = 0;
+                            if state = 3 &amp;&amp; image_index = gath_spr_length
+                            {
+                                state = 0;
+                                image_speed = 0;
+                            }
+                            if state = 3 &amp;&amp; image_index = gath_spr_hit
+                            {
+                                if (ownerId == global.PlayerId) // Network
+                                {
+                                    grout_target.resource_amount -= gather_rate;
+                                    grout_collect += gather_rate;
+                                }
+                            }
                         }
-                        if state = 3 &amp;&amp; image_index = gath_spr_hit
+                        break;
+                        case 1:
                         {
                             if (ownerId == global.PlayerId) // Network
                             {
-                                grout_target.resource_amount -= gather_rate;
-                                grout_collect += gather_rate;
+                                grout_target.resource_amount -= res_hold_lim;
+                                grout_collect += res_hold_lim;
                             }
                         }
+                        break; // ACUTAL Gather Cycle *************** end
                     }
-                    break;
-                    case 1:
-                    {
-                        if (ownerId == global.PlayerId) // Network
-                        {
-                            grout_target.resource_amount -= res_hold_lim;
-                            grout_collect += res_hold_lim;
-                        }
-                    }
-                    break; // ACUTAL Gather Cycle *************** end
                 }
             }
         }
@@ -1742,75 +1784,77 @@ if ispeon = true &amp;&amp; gathering = true
             gathering = false;  //** not checked - possible problem area
             able_to_move = false;
         }
-    }
-        //else
-        if instance_exists(grout_target) = false
+    } //If moving towards resource / About to gather at point blank - End
+    
+    //If resource is dead - Start
+    if instance_exists(grout_target) = false
+    {
+        temp = instance_nearest(res_x + random(4) - random(4), res_y + random(4) - random(4), grout_object)    
+    
+        if distance_to_object(temp) &lt;= 300
         {
-            temp = instance_nearest(res_x + random(4) - random(4), res_y + random(4) - random(4), grout_object)    
-        
-            if distance_to_object(temp) &lt;= 300
+            grout_type = temp.type;
+            //grout_collect = temp.resource_num;
+            switch(temp.resource_num)
             {
-                grout_type = temp.type;
-                //grout_collect = temp.resource_num;
-                switch(temp.resource_num)
-                {
-                    case 1:{grout_collect = res_hold1;}break;
-                    case 2:{grout_collect = res_hold2;}break;
-                    case 3:{grout_collect = res_hold3;}break;
-                    case 4:{grout_collect = res_hold4;}break;
-                    case 5:{grout_collect = res_hold5;}break;
-                }
-                grout_resnum = temp.resource_num;
-                grout_target = temp;
-                grout_object = temp.object_index;
-                res_x = temp.x;
-                res_y = temp.y;
-                grout_deposit = instance_nearest(x,y,grout_peonhouse); //clostest peon building structure
-                //enter gathering routine
-                gathering = true;
+                case 1:{grout_collect = res_hold1;}break;
+                case 2:{grout_collect = res_hold2;}break;
+                case 3:{grout_collect = res_hold3;}break;
+                case 4:{grout_collect = res_hold4;}break;
+                case 5:{grout_collect = res_hold5;}break;
             }
-            else
-            {
-                //gathering = false;
-                //able_to_move = false;
-                if instance_exists(grout_deposit) //** not checked - possible problem area   |
-                {                                 //                                        \/
-                    move_x = grout_deposit.x
-                    move_y = grout_deposit.y
-                    able_to_move = true;
-                    state = 5;
-                    collecting = false; // New - For Network
-                    if distance_to_object(grout_deposit) &lt;= grout_deposit.area_size
+            grout_resnum = temp.resource_num;
+            grout_target = temp;
+            grout_object = temp.object_index;
+            res_x = temp.x;
+            res_y = temp.y;
+            grout_deposit = instance_nearest(x,y,grout_peonhouse); //clostest peon building structure
+            //enter gathering routine
+            gathering = true;
+        }
+        else
+        {
+            //gathering = false;
+            //able_to_move = false;
+            if instance_exists(grout_deposit) //** not checked - possible problem area   |
+            {                                 //                                        \/
+                move_x = grout_deposit.x
+                move_y = grout_deposit.y
+                able_to_move = true;
+                state = 5;
+                collecting = false; // New - For Network
+                if distance_to_object(grout_deposit) &lt;= grout_deposit.area_size
+                {
                     {
+                        /*switch(grout_resnum)
                         {
-                            /*switch(grout_resnum)
-                            {
-                                case 1:{res_hold1 = grout_collect;}break;
-                                case 2:{res_hold2 = grout_collect;}break;
-                                case 3:{res_hold3 = grout_collect;}break;
-                                case 4:{res_hold4 = grout_collect;}break;
-                                case 5:{res_hold5 = grout_collect;}break;
-                            }*/
-                            if (ownerId == global.PlayerId) // Network
-                            {
-                                obj_resource_manager.res1 += res_hold1;
-                                obj_resource_manager.res2 += res_hold2;
-                                obj_resource_manager.res3 += res_hold3;
-                                obj_resource_manager.res4 += res_hold4;
-                                obj_resource_manager.res5 += res_hold5;
-                                res_hold1 = 0;
-                                res_hold2 = 0;
-                                res_hold3 = 0;
-                                res_hold4 = 0;
-                                res_hold5 = 0;
-                            }
+                            case 1:{res_hold1 = grout_collect;}break;
+                            case 2:{res_hold2 = grout_collect;}break;
+                            case 3:{res_hold3 = grout_collect;}break;
+                            case 4:{res_hold4 = grout_collect;}break;
+                            case 5:{res_hold5 = grout_collect;}break;
+                        }*/
+                        if (ownerId == global.PlayerId) // Network
+                        {
+                            obj_resource_manager.res1 += res_hold1;
+                            obj_resource_manager.res2 += res_hold2;
+                            obj_resource_manager.res3 += res_hold3;
+                            obj_resource_manager.res4 += res_hold4;
+                            obj_resource_manager.res5 += res_hold5;
+                            res_hold1 = 0;
+                            res_hold2 = 0;
+                            res_hold3 = 0;
+                            res_hold4 = 0;
+                            res_hold5 = 0;
                         }
-                    holding_resources = false;
-                    grout_collect = 0;
                     }
+                holding_resources = false;
+                grout_collect = 0;
                 }
             }
         }
+    }
+    //If resource is dead -- End
     switch(grout_resnum)
     {
         case 1:{res_hold1 = grout_collect;}break;
@@ -2673,7 +2717,7 @@ if (ailment_count&gt;0)
 
 
 //DBG draw astar path DEBUG
-/*
+
 draw_set_color(c_red);
 
 
