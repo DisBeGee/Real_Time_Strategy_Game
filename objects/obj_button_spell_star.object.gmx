@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>// setup //
-/*var*/ spr_but_up = spr_button_fireball1;
-/*var*/ spr_but_down = spr_button_fireball2;
+/*var*/ spr_but_up = spr_button_star1;
+/*var*/ spr_but_down = spr_button_star2;
 /*var*/ spr_but_inact = spr_button_fireball3;
 
 // Spell setup //

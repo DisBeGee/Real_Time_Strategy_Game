@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-9000004</depth>
   <persistent>0</persistent>
-  <parentName>obj_button_spell_template</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,169 +26,225 @@
           <argument>
             <kind>1</kind>
             <string>// setup //
-/*var*/ spr_but_up = spr_button_fireball1;
-/*var*/ spr_but_down = spr_button_fireball2;
-/*var*/ spr_but_inact = spr_button_fireball3;
-
-// Spell setup //
-/*var*/ spell_name = "Spell 1"; //name of the spell
-/*var*/ spell_casttype = 0; //0 = projectile, 1 = unit target, 2 = free target, 3 = toggle/activate
-/*var*/ spell_targettype = 0; //for targetted spells - 0 is enemy, 1 is ally, 2 is both
-/*var*/ spell_range = 600; //range of the spell
-/*var*/ spell_cooldown = 100; //how often the spell can be cast
-/*var*/ spell_cost = 0; //how much the spell costs
-/*var*/ spell_object = obj_projectile_fireball; //this is the projectile or object that the  spell will summon
-/*var*/ spell_damage = 30; //damage of spell, if any
-/*var*/ spell_casttime = 10; //how long it takes before this spell is cast
-/*var*/ spell_proj_speed = 100; //how fast the projectile is
-/*var*/ spell_proj_aoe = 50; //aoe range of spell
-/*var*/ 
-/*var*/ spell_mess_cd = "Ability is on cooldown"; //message for when the ability is on cooldown
-/*var*/ spell_mess_unavail = "Ability is unavailable"; //message for when the ability id unabvailable
-/*var*/ 
-/*var*/ //spell_code = "temp_proj=instance_create(x,y,cast_object);temp_proj.damage = cast_damage;temp_proj.targetx = cast_targetx;temp_proj.targety = cast_targety;temp_proj.aoe = cast_proj_aoe;hud_button_cooldown_index[cast_button_index]=cast_cooldown;";
-        spell_code = scr_spell_clight
+/*var*/ xpos = 99;
+/*var*/ ypos = 99;
+/*var*/ active = false
+/*var*/ spr_but_up = spr_button_big_test;
+/*var*/ spr_but_down = spr_button_test2;
+/*var*/ spr_but_inact = spr_button_test;
+/*var*/ spr_state = 0; // 0 = up, 1 = down, 2 = inactive, you can add more if you want
 
 //hotkey system
-/*var*/ hotkey = "T" //the hotkey that this button is assigned to. NOTE: make sure it is a capital letter, lowercase does not work
+/*var*/ hotkey = "0" //the hotkey that this button is assigned to
 /*var*/ 
 
 //tooltip system
-/*var*/ text[0] = "Fireball ("+hotkey+")"
+/*var*/ text[0] = ""
 /*var*/ text[1] = ""
 /*var*/ text[2] = ""
 /*var*/ text[3] = ""
 /*var*/ text[4] = ""
-/*var*/ text_used = 1
+/*var*/ text_used = 0
+/*var*/ mouse_over = false;
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>spr_state = 0;</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// activate tooltip
+if (mouse_over)
+{
+    obj_tooltip_manager.text[0] = text[0];
+    obj_tooltip_manager.text[1] = text[1];
+    obj_tooltip_manager.text[2] = text[2];
+    obj_tooltip_manager.text[3] = text[3];
+    obj_tooltip_manager.text[4] = text[4];
+    obj_tooltip_manager.text_used = text_used;
+    obj_tooltip_manager.active = true;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//button positioning - start
+x = view_xview[0]+xpos;
+y = view_yview[0]+ypos;
+//button positioning end
+
+//hotkey system
+if (keyboard_check_pressed(ord(hotkey)))
+{
+    //copy ALL the code you have in the left press event into this space
+}</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="6" enumb="11">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>mouse_over = false;
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="6" enumb="10">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>mouse_over = true;
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//clicking effect - start
+spr_state = 1;
+alarm[0] = 1;
+//clicking effect - end
+
+//your own code to what happens when you press this button</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//drawing the button - start
+switch (spr_state)
+{
+    case 0:
+        draw_sprite(spr_but_up,-1,view_xview[0]+xpos,view_yview[0]+ypos)
+    break;
+    
+    case 1:
+        draw_sprite(spr_but_down,-1,view_xview[0]+xpos,view_yview[0]+ypos)
+    break;
+    
+    case 2:
+        draw_sprite(spr_but_inact,-1,view_xview[0]+xpos,view_yview[0]+ypos)
+    break;
+}
+//drawing the button - end</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

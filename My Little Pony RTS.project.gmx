@@ -49,7 +49,12 @@
         <sprite>sprites\spr_button_cooldown_timer2</sprite>
         <sprite>sprites\spr_button_cooldown_timer3</sprite>
         <sprite>sprites\spr_button_cooldown_timer4</sprite>
+        <sprites name="starbolt">
+          <sprite>sprites\spr_button_star2</sprite>
+          <sprite>sprites\spr_button_star1</sprite>
+        </sprites>
       </sprites>
+      <sprite>sprites\spr_button_big_test</sprite>
     </sprites>
     <sprites name="house">
       <sprite>sprites\spr_house_y</sprite>
@@ -417,6 +422,7 @@
   <objects name="objects">
     <objects name="Buttons">
       <object>objects\obj_button_template</object>
+      <object>objects\obj_button_test_large</object>
       <object>objects\obj_button_test_message</object>
       <object>objects\obj_tmp_build</object>
       <objects name="Buildings">
@@ -439,6 +445,7 @@
           <object>objects\obj_button_spell_template</object>
         </objects>
         <object>objects\obj_button_spell1_template</object>
+        <object>objects\obj_button_spell_star</object>
         <object>objects\obj_button_heal</object>
         <object>objects\obj_button_spell_clight</object>
         <object>objects\obj_button_spell_cocktail</object>

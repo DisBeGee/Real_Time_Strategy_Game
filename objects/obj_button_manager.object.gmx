@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>// - Setup - //
 /*var*/ has_created = false;
-/*var*/ buttons_x = 1110; // the top corner of where the buttons will be
+/*var*/ buttons_x = 1112; // the top corner of where the buttons will be
 /*var*/ buttons_y = obj_HUD.ypos+110; // the top corner of where the buttons will be
 /*var*/ display = false;
 /*var*/ unit_display = 99;
@@ -70,41 +70,41 @@
 /*var*/ hud_build_s17 = 99;
 /*var*/ hud_build_s18 = 99;
 /*var*/ hud_slotx1 = buttons_x + 1;
-/*var*/ hud_slotx2 = buttons_x + 44;
-/*var*/ hud_slotx3 = buttons_x + 87;
-/*var*/ hud_slotx4 = buttons_x + 130;
-/*var*/ hud_slotx5 = buttons_x + 173;
-/*var*/ hud_slotx6 = buttons_x + 216;
+/*var*/ hud_slotx2 = buttons_x + 44 + 8 + 7;
+/*var*/ hud_slotx3 = buttons_x + 87 + 16 + 14;
+/*var*/ hud_slotx4 = buttons_x + 130 + 24 + 21;
+/*var*/ hud_slotx5 = buttons_x + 173 + 32 + 28;
+/*var*/ hud_slotx6 = buttons_x + 216 + 40 + 35;
 /*var*/ hud_slotx7 = buttons_x + 1;
-/*var*/ hud_slotx8 = buttons_x + 44;
-/*var*/ hud_slotx9 = buttons_x + 87;
-/*var*/ hud_slotx10 = buttons_x + 130;
-/*var*/ hud_slotx11 = buttons_x + 173;
-/*var*/ hud_slotx12 = buttons_x + 216;
+/*var*/ hud_slotx8 = buttons_x + 44 + 8 + 7;
+/*var*/ hud_slotx9 = buttons_x + 87 + 16 + 14;
+/*var*/ hud_slotx10 = buttons_x + 130 + 24 + 21;
+/*var*/ hud_slotx11 = buttons_x + 173 + 32 + 28;
+/*var*/ hud_slotx12 = buttons_x + 216 + 40 + 35;
 /*var*/ hud_slotx13 = buttons_x + 1;
-/*var*/ hud_slotx14 = buttons_x + 44;
-/*var*/ hud_slotx15 = buttons_x + 87;
-/*var*/ hud_slotx16 = buttons_x + 130;
-/*var*/ hud_slotx17 = buttons_x + 173;
-/*var*/ hud_slotx18 = buttons_x + 216;
+/*var*/ hud_slotx14 = buttons_x + 44 + 8 + 7;
+/*var*/ hud_slotx15 = buttons_x + 87 + 16 + 14;
+/*var*/ hud_slotx16 = buttons_x + 130 + 24 + 21;
+/*var*/ hud_slotx17 = buttons_x + 173 + 32 + 28;
+/*var*/ hud_slotx18 = buttons_x + 216 + 40 + 35;
 /*var*/ hud_sloty1 = buttons_y + 1;
 /*var*/ hud_sloty2 = buttons_y + 1;
 /*var*/ hud_sloty3 = buttons_y + 1;
 /*var*/ hud_sloty4 = buttons_y + 1;
 /*var*/ hud_sloty5 = buttons_y + 1;
 /*var*/ hud_sloty6 = buttons_y + 1;
-/*var*/ hud_sloty7 = buttons_y + 44;
-/*var*/ hud_sloty8 = buttons_y + 44;
-/*var*/ hud_sloty9 = buttons_y + 44;
-/*var*/ hud_sloty10 = buttons_y + 44;
-/*var*/ hud_sloty11 = buttons_y + 44;
-/*var*/ hud_sloty12 = buttons_y + 44;
-/*var*/ hud_sloty13 = buttons_y + 87;
-/*var*/ hud_sloty14 = buttons_y + 87;
-/*var*/ hud_sloty15 = buttons_y + 87;
-/*var*/ hud_sloty16 = buttons_y + 87;
-/*var*/ hud_sloty17 = buttons_y + 87;
-/*var*/ hud_sloty18 = buttons_y + 87;
+/*var*/ hud_sloty7 = buttons_y + 44 + 8;
+/*var*/ hud_sloty8 = buttons_y + 44 + 8;
+/*var*/ hud_sloty9 = buttons_y + 44 + 8;
+/*var*/ hud_sloty10 = buttons_y + 44 + 8;
+/*var*/ hud_sloty11 = buttons_y + 44 + 8;
+/*var*/ hud_sloty12 = buttons_y + 44 + 8;
+/*var*/ hud_sloty13 = buttons_y + 87 + 16;
+/*var*/ hud_sloty14 = buttons_y + 87 + 16;
+/*var*/ hud_sloty15 = buttons_y + 87 + 16;
+/*var*/ hud_sloty16 = buttons_y + 87 + 16;
+/*var*/ hud_sloty17 = buttons_y + 87 + 16;
+/*var*/ hud_sloty18 = buttons_y + 87 + 16;
 
 </string>
           </argument>
@@ -209,7 +209,8 @@ if (display)
             unit_display = obj_HUD.target;
     }
 }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

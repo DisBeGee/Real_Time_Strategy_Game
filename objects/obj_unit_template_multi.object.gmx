@@ -1281,7 +1281,7 @@ if (!collide &amp;&amp; !able_to_move) {
     just_created = false
 } 
 
-//Calculate vector for collision expectancy
+//Calculate vector for collision expectancy &amp;&amp; NEW: Calculate coll_x and y if x=x and y=y
 if (collide) {
     coll_angle = (point_direction(collide.x,collide.y,x,y))
     coll_y_vec = cos(degtorad(coll_angle)) * unit_speed
@@ -1289,6 +1289,20 @@ if (collide) {
     coll_x = x - (collide.x - x)
     coll_y = y - (collide.y - y)
     temp_direction = direction
+    
+    if (collide.x = x &amp;&amp; collide.y = y) {
+        //Just something I thought about randomly... The only
+        //primary key identifier to differentiate them
+        if (id &gt; collide) {
+            coll_x = x - 10
+            coll_y = y - 10
+        }
+        else {
+            coll_x = x + 10
+            coll_y = y + 10
+        }
+    }
+    
 }
 debug_var = as_map_getcell(obj_map.map,ceil(x/col_width),ceil(y/row_height));
 //If colliding with something and not moving **AND NOT** gathering
@@ -2746,7 +2760,7 @@ if (ailment_count&gt;0)
 
 
 //DBG draw astar path DEBUG
-
+/*
 draw_set_color(c_red);
 
 
