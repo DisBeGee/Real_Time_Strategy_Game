@@ -232,6 +232,7 @@
         <sprite>sprites\spr_wrk_downleft_attack</sprite>
         <sprite>sprites\spr_wrk_downright_attack</sprite>
       </sprites>
+      <sprite>sprites\spr_wrk_portrait</sprite>
     </sprites>
     <sprites name="Resources">
       <sprite>sprites\MLPTree</sprite>

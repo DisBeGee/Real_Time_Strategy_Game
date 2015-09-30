@@ -31,7 +31,7 @@
 /*var*/ selectcy1 = -10;
 /*var*/ selectcy2 = 10;
 /*var*/ ally_units = obj_ally_parent;
-/*var*/ unit_pic = spr_man_pic; // the pic for the unit on the hud
+/*var*/ unit_pic = spr_wrk_portrait; // the pic for the unit on the hud
 /*var*/ mask_index = spr_wrk_mask
 /*var*/ 
 /* - Setup version 2- */
@@ -159,7 +159,7 @@
 /*var*/ 
 /* - HUD - */
 /*var*/ hud_gen_s1 = obj_button_spell_star;
-/*var*/ hud_gen_s2 = obj_button_test_large;
+/*var*/ hud_gen_s2 = object260;
 /*var*/ hud_gen_s3 = obj_button_test_large;
 /*var*/ hud_gen_s4 = obj_button_test_large;
 /*var*/ hud_gen_s5 = obj_button_test_large;
