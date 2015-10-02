@@ -397,7 +397,8 @@ switch (spr_state)
         draw_sprite(spr_but_inact,-1,view_xview[0]+xpos,view_yview[0]+ypos)
     break;
 }
-//drawing the button - end</string>
+//drawing the button - end
+</string>
           </argument>
         </arguments>
       </action>

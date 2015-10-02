@@ -337,6 +337,7 @@
         <sprite>sprites\spr_ranged_upright_attack</sprite>
         <sprite>sprites\spr_ranged_upleft_attack</sprite>
       </sprites>
+      <sprite>sprites\spr_rng_portrait</sprite>
     </sprites>
     <sprites name="HeavyHorse">
       <sprites name="stand">
@@ -421,39 +422,6 @@
     <font>fonts\font_equestria_smaller</font>
   </fonts>
   <objects name="objects">
-    <objects name="Buttons">
-      <object>objects\obj_button_template</object>
-      <object>objects\obj_button_test_large</object>
-      <object>objects\obj_button_test_message</object>
-      <object>objects\obj_tmp_build</object>
-      <objects name="Buildings">
-        <objects name="Template">
-          <object>objects\obj_button_building_template</object>
-        </objects>
-        <object>objects\obj_building1_template</object>
-        <object>objects\object260</object>
-        <object>objects\obj_button_build_forge</object>
-      </objects>
-      <objects name="Build Queue">
-        <objects name="Template">
-          <object>objects\obj_button_unit_template</object>
-        </objects>
-        <object>objects\obj_unit1_template</object>
-        <object>objects\obj_wrkhorse_button</object>
-      </objects>
-      <objects name="Spells">
-        <objects name="Template">
-          <object>objects\obj_button_spell_template</object>
-        </objects>
-        <object>objects\obj_button_spell1_template</object>
-        <object>objects\obj_button_spell_star</object>
-        <object>objects\obj_button_heal</object>
-        <object>objects\obj_button_spell_clight</object>
-        <object>objects\obj_button_spell_cocktail</object>
-        <object>objects\obj_button_spell_scilence</object>
-        <object>objects\obj_button_spell_grenade</object>
-      </objects>
-    </objects>
     <objects name="Buildings">
       <objects name="Template">
         <object>objects\obj_building_parent</object>
@@ -832,6 +800,41 @@
       <object>objects\obj_tempblock</object>
       <object>objects\obj_enem_parent</object>
       <object>objects\obj_blocked_by_building_parent</object>
+    </objects>
+    <objects name="Buttons">
+      <object>objects\obj_button_template</object>
+      <object>objects\obj_button_test_large</object>
+      <object>objects\obj_button_test_message</object>
+      <object>objects\obj_tmp_build</object>
+      <objects name="Buildings">
+        <objects name="Template">
+          <object>objects\obj_button_building_template</object>
+        </objects>
+        <object>objects\obj_building1_template</object>
+        <object>objects\object260</object>
+        <object>objects\obj_button_build_forge</object>
+      </objects>
+      <objects name="Build Queue">
+        <objects name="Template">
+          <object>objects\obj_button_unit_template</object>
+        </objects>
+        <object>objects\obj_unit1_template</object>
+        <object>objects\obj_wrkhorse_button</object>
+        <object>objects\obj_rnghorse_button</object>
+        <object>objects\obj_hvyhorse_button</object>
+      </objects>
+      <objects name="Spells">
+        <objects name="Template">
+          <object>objects\obj_button_spell_template</object>
+        </objects>
+        <object>objects\obj_button_spell1_template</object>
+        <object>objects\obj_button_spell_star</object>
+        <object>objects\obj_button_heal</object>
+        <object>objects\obj_button_spell_clight</object>
+        <object>objects\obj_button_spell_cocktail</object>
+        <object>objects\obj_button_spell_scilence</object>
+        <object>objects\obj_button_spell_grenade</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
