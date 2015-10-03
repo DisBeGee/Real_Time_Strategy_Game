@@ -168,6 +168,19 @@ global.obj_unit_type[5,7] = obj_p7_unit_heavyhorse;
 global.obj_unit_type[5,8] = obj_p8_unit_heavyhorse;
 global.obj_unit_type[5,9] = obj_p9_unit_heavyhorse;
 
+//obj_p6_unit_flyinghorse
+
+global.obj_unit_type[6,0] = obj_p0_unit_flyinghorse;
+global.obj_unit_type[6,1] = obj_p1_unit_flyinghorse;
+global.obj_unit_type[6,2] = obj_p2_unit_flyinghorse;
+global.obj_unit_type[6,3] = obj_p3_unit_heavyhorse;
+global.obj_unit_type[6,4] = obj_p4_unit_heavyhorse;
+global.obj_unit_type[6,5] = obj_p5_unit_heavyhorse;
+global.obj_unit_type[6,6] = obj_p6_unit_heavyhorse;
+global.obj_unit_type[6,7] = obj_p7_unit_heavyhorse;
+global.obj_unit_type[6,8] = obj_p8_unit_heavyhorse;
+global.obj_unit_type[6,9] = obj_p9_unit_heavyhorse;
+
 // buildings
 // obj_p#_building_parent
 global.obj_building_type[0,0] = obj_p0_building_parent;

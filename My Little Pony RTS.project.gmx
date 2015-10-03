@@ -430,6 +430,28 @@
     <sprite>sprites\Button_Template_Small</sprite>
     <sprite>sprites\sprite286</sprite>
     <sprite>sprites\spr_mag_cutiemark</sprite>
+    <sprites name="FlyingHorse">
+      <sprites name="idle">
+        <sprite>sprites\spr_fly_idle_up</sprite>
+        <sprite>sprites\spr_fly_idle_upright</sprite>
+        <sprite>sprites\spr_fly_idle_upleft</sprite>
+        <sprite>sprites\spr_fly_idle_right</sprite>
+        <sprite>sprites\spr_fly_idle_left</sprite>
+        <sprite>sprites\spr_fly_idle_downright</sprite>
+        <sprite>sprites\spr_fly_idle_downleft</sprite>
+        <sprite>sprites\spr_fly_idle_down</sprite>
+      </sprites>
+      <sprites name="flying">
+        <sprite>sprites\spr_fly_flying_up</sprite>
+        <sprite>sprites\spr_fly_flying_upright</sprite>
+        <sprite>sprites\spr_fly_flying_upleft</sprite>
+        <sprite>sprites\spr_fly_flying_right</sprite>
+        <sprite>sprites\spr_fly_flying_left</sprite>
+        <sprite>sprites\spr_fly_flying_downright</sprite>
+        <sprite>sprites\spr_fly_flying_downleft</sprite>
+        <sprite>sprites\spr_fly_flying_down</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\CliffsTile</background>
@@ -586,6 +608,7 @@
           </objects>
           <object>objects\obj_unit_multi_shared</object>
           <object>objects\Wrkhorse</object>
+          <object>objects\FlyingHorse</object>
           <object>objects\RangedHorse</object>
           <object>objects\HeavyHorse</object>
           <object>objects\Atkhorse</object>
@@ -597,6 +620,7 @@
           </objects>
           <object>objects\obj_p0_unit_example</object>
           <object>objects\obj_p0_unit_workhorse</object>
+          <object>objects\obj_p0_unit_flyinghorse</object>
           <object>objects\obj_p0_unit_atkhorse</object>
           <object>objects\obj_p0_unit_rangedhorse</object>
           <object>objects\obj_p0_unit_heavyhorse</object>
@@ -608,6 +632,7 @@
           </objects>
           <object>objects\obj_p1_unit_example</object>
           <object>objects\obj_p1_unit_workhorse</object>
+          <object>objects\obj_p1_unit_flyinghorse</object>
           <object>objects\obj_p1_unit_atkhorse</object>
           <object>objects\obj_p1_unit_rangedhorse</object>
           <object>objects\obj_p1_unit_heavyhorse</object>
@@ -619,6 +644,7 @@
           </objects>
           <object>objects\obj_p2_unit_example</object>
           <object>objects\obj_p2_unit_workhorse</object>
+          <object>objects\obj_p2_unit_flyinghorse</object>
           <object>objects\obj_p2_unit_atkhorse</object>
           <object>objects\obj_p2_unit_rangedhorse</object>
           <object>objects\obj_p2_unit_heavyhorse</object>
@@ -860,6 +886,7 @@
         <object>objects\obj_wrkhorse_button</object>
         <object>objects\obj_rnghorse_button</object>
         <object>objects\obj_hvyhorse_button</object>
+        <object>objects\obj_flyhorse_button</object>
         <object>objects\obj_mlehorse_button</object>
       </objects>
       <objects name="Spells">
