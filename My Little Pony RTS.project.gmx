@@ -55,6 +55,26 @@
         </sprites>
       </sprites>
       <sprite>sprites\spr_button_big_test</sprite>
+      <sprites name="Units">
+        <sprites name="Melee Unit">
+          <sprite>sprites\spr_button_unit_mle2</sprite>
+          <sprite>sprites\spr_button_unit_mle1</sprite>
+          <sprite>sprites\spr_button_unit_mle3</sprite>
+        </sprites>
+        <sprites name="Ranged Unit">
+          <sprite>sprites\spr_button_unit_rng1</sprite>
+          <sprite>sprites\spr_button_unit_rng2</sprite>
+          <sprite>sprites\spr_button_unit_rng3</sprite>
+        </sprites>
+        <sprites name="Work Unit">
+          <sprite>sprites\spr_button_unit_wrk1</sprite>
+          <sprite>sprites\spr_button_unit_wrk2</sprite>
+          <sprite>sprites\spr_button_unit_wrk3</sprite>
+        </sprites>
+        <sprites name="Heavy Unit">
+          <sprite>sprites\spr_button_unit_hvy1</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="house">
       <sprite>sprites\spr_house_y</sprite>
@@ -233,6 +253,8 @@
         <sprite>sprites\spr_wrk_downright_attack</sprite>
       </sprites>
       <sprite>sprites\spr_wrk_portrait</sprite>
+      <sprite>sprites\spr_wrk_cutiemark</sprite>
+      <sprite>sprites\spr_wrk_icon_cutiemark</sprite>
     </sprites>
     <sprites name="Resources">
       <sprite>sprites\MLPTree</sprite>
@@ -303,6 +325,8 @@
       </sprites>
       <sprite>sprites\spr_atk_mask</sprite>
       <sprite>sprites\spr_atk_icon</sprite>
+      <sprite>sprites\spr_atk_cutiemark</sprite>
+      <sprite>sprites\spr_atk_icon_cutiemark</sprite>
     </sprites>
     <sprites name="Rangedhorse">
       <sprites name="stand">
@@ -338,6 +362,8 @@
         <sprite>sprites\spr_ranged_upleft_attack</sprite>
       </sprites>
       <sprite>sprites\spr_rng_portrait</sprite>
+      <sprite>sprites\spr_rng_cutiemark</sprite>
+      <sprite>sprites\spr_rng_icon_cutiemark</sprite>
     </sprites>
     <sprites name="HeavyHorse">
       <sprites name="stand">
@@ -372,6 +398,8 @@
       </sprites>
       <sprite>sprites\spr_heavy_icon</sprite>
       <sprite>sprites\spr_heavy_mask</sprite>
+      <sprite>sprites\spr_hvy_cutiemark</sprite>
+      <sprite>sprites\spr_hvy_icon_cutiemark</sprite>
     </sprites>
     <sprites name="setup">
       <sprite>sprites\Collision</sprite>
@@ -392,6 +420,12 @@
     </sprites>
     <sprite>sprites\CliffCartoonSprite</sprite>
     <sprite>sprites\CliffCartoonSprite_Dark</sprite>
+    <sprite>sprites\test</sprite>
+    <sprite>sprites\sprite280</sprite>
+    <sprite>sprites\Button_Template</sprite>
+    <sprite>sprites\Button_Template_Small</sprite>
+    <sprite>sprites\sprite286</sprite>
+    <sprite>sprites\spr_mag_cutiemark</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\CliffsTile</background>

@@ -33,7 +33,7 @@
 /* var */ ally_col = c_blue; //color of ally dots
 /* var */ enem_col = c_red; //color of enemy dots
 /* var */ cliff_col = c_gray;
-/* var */ test = false;
+/* var */ //test = false;
 /* var */ 
 /* var */ active = false; //for bug fix
 /* var */ 

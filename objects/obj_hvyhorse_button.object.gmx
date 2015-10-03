@@ -38,7 +38,7 @@
 /*var*/ buildv_unit = Wrkhorse; // the unit that will be created using this button
 /*var*/ buildv_time = 20; // how long it takes to build the unit (20 = about 3 seconds (NOTE! higher values decease the time, lower values increase time))
 /*var*/ buildv_name = "Bazooka Unit"; // Name of the unit being built
-/*var*/ buildv_icon = spr_man_icon; // icon used when the unit is being built
+/*var*/ buildv_icon = spr_hvy_icon_cutiemark; // icon used when the unit is being built
 /*var*/ //buildv_cost
 /*var*/ 
 /*var*/ 
