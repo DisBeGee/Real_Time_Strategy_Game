@@ -31,11 +31,11 @@
 /*var*/ selectcy1 = 0;
 /*var*/ selectcy2 = 20;
 /*var*/ ally_units = obj_ally_parent;
-/*var*/ unit_pic = spr_man_pic; // the pic for the unit on the hud
+/*var*/ unit_pic = spr_hvy_portrait; // the pic for the unit on the hud
 /*var*/ mask_index = spr_wrk_mask
 /*var*/ 
 /* - Setup version 2- */
-/*var*/ y_offset = 100; // this offest makes it so the centre of the unit is somewhere near its feet, to give the isometric feel
+/*var*/ y_offset = 33; // this offest makes it so the centre of the unit is somewhere near its feet, to give the isometric feel
 /*var*/ foot_radius = 10; //the radius of the circle under the units feet, which is used for pushing against other units
 /*var*/ push_rate = 1; // this is the speed at which the units push against eachother, when they pile up on top of each other
 /*var*/ alarm[4] = 5; // This DOESNT have to be alarm 4, but make sure you fix the other vaiable to make it work for a different alram
@@ -59,7 +59,7 @@
 /*var*/ unit_hp_max = 20;
 /*var*/ unit_damage = 3;
 /*var*/ unit_damage_range = 1;
-/*var*/ unit_name = "Work Horse"
+/*var*/ unit_name = "Galloping Gattling Gunner"
 /*var*/ 
 /*var*/ 
 /*var*/ 

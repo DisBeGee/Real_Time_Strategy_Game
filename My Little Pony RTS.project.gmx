@@ -73,6 +73,8 @@
         </sprites>
         <sprites name="Heavy Unit">
           <sprite>sprites\spr_button_unit_hvy1</sprite>
+          <sprite>sprites\spr_button_unit_hvy2</sprite>
+          <sprite>sprites\spr_button_unit_hvy3</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -327,6 +329,7 @@
       <sprite>sprites\spr_atk_icon</sprite>
       <sprite>sprites\spr_atk_cutiemark</sprite>
       <sprite>sprites\spr_atk_icon_cutiemark</sprite>
+      <sprite>sprites\spr_atk_portrait</sprite>
     </sprites>
     <sprites name="Rangedhorse">
       <sprites name="stand">
@@ -399,6 +402,7 @@
       <sprite>sprites\spr_heavy_icon</sprite>
       <sprite>sprites\spr_heavy_mask</sprite>
       <sprite>sprites\spr_hvy_cutiemark</sprite>
+      <sprite>sprites\spr_hvy_portrait</sprite>
       <sprite>sprites\spr_hvy_icon_cutiemark</sprite>
     </sprites>
     <sprites name="setup">
@@ -856,6 +860,7 @@
         <object>objects\obj_wrkhorse_button</object>
         <object>objects\obj_rnghorse_button</object>
         <object>objects\obj_hvyhorse_button</object>
+        <object>objects\obj_mlehorse_button</object>
       </objects>
       <objects name="Spells">
         <objects name="Template">
