@@ -5,8 +5,8 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_unit_template_multi</parentName>
-  <maskName>spr_wrk_mask</maskName>
+  <parentName>obj_unit_template_multi_flying</parentName>
+  <maskName>spr_fly_mask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -32,7 +32,7 @@
 /*var*/ selectcy2 = 10;
 /*var*/ ally_units = obj_ally_parent;
 /*var*/ unit_pic = spr_wrk_portrait; // the pic for the unit on the hud
-/*var*/ mask_index = spr_wrk_mask
+/*var*/ mask_index = spr_fly_mask
 /*var*/ 
 /* - Setup version 2- */
 /*var*/ y_offset = 120; // this offest makes it so the centre of the unit is somewhere near its feet, to give the isometric feel
@@ -60,13 +60,13 @@
 /*var*/ unit_damage = 3;
 /*var*/ unit_damage_range = 1;
 /*var*/ unit_name = "Work Horse"
-/*var*/ 
+/*var*/
 /*var*/ 
 /*var*/ 
 /*var*/ 
 /*var*/ 
 /* initializing sprites */
-/*var*/ image_speed = 0.25
+/*var*/ idle_image_speed = 0.25
 /*var*/ state_anim[0,0] = spr_fly_idle_down;
 /*var*/ state_anim[0,1] = spr_fly_idle_downright;
 /*var*/ state_anim[0,2] = spr_fly_idle_right;
@@ -199,8 +199,8 @@
 /*var*/ 
 /* - for HUD - */
 /* - for Health Bar - */
-/*var*/ healthbar_x = -14;
-/*var*/ healthbar_y = -50;
+/*var*/ healthbar_x = -20;
+/*var*/ healthbar_y = -35 - y_offset;
 /*var*/ healthbar_length = 40;
 /*var*/ healthbar_height = 5;
 /*var*/ healthbar_fg_col = c_lime;

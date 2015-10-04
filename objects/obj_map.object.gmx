@@ -30,6 +30,7 @@ map_row_height = 32
 debug = false
 
 map =  as_map_create(room_width/map_col_width, room_height/map_row_height, 1);
+flying_map = as_map_create(room_width/map_col_width, room_height/map_row_height,1);
 
 //grid = ds_grid_create(room_width/map_col_width,room_height/map_row_height)
 for (i=0;i&lt;room_width;i+=map_col_width) {
