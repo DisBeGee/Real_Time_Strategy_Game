@@ -76,6 +76,11 @@
           <sprite>sprites\spr_button_unit_hvy2</sprite>
           <sprite>sprites\spr_button_unit_hvy3</sprite>
         </sprites>
+        <sprites name="Flying Unit">
+          <sprite>sprites\spr_button_unit_fly1</sprite>
+          <sprite>sprites\spr_button_unit_fly2</sprite>
+          <sprite>sprites\spr_button_unit_fly3</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="house">
@@ -452,6 +457,9 @@
         <sprite>sprites\spr_fly_flying_down</sprite>
       </sprites>
       <sprite>sprites\spr_fly_mask</sprite>
+      <sprite>sprites\spr_fly_portrait</sprite>
+      <sprite>sprites\spr_fly_icon_cutiemark</sprite>
+      <sprite>sprites\spr_fly_cutiemark</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">

@@ -39,6 +39,10 @@
 /*var*/ 
 /*var*/ 
 /*var*/ 
+cliff_sight = false
+if (collision_point(x,y,EntireCliffs,true,true)) {
+    cliff_sight = true
+}
 
 // Network
 send_threshold = 20; // when to send the change in value
@@ -93,7 +97,8 @@ as_map_setcell(obj_map.map,(x/obj_map.map_col_width)-1,((y)/obj_map.map_row_heig
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -y
+            <string>if (!cliff_sight) {depth = -y}
+else {depth = -y - room_height}
 </string>
           </argument>
         </arguments>

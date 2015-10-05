@@ -1273,7 +1273,7 @@ if (collide &amp;&amp; !able_to_move &amp;&amp; !gathering) {
 
 
     //New function: Attempt to use x_previous and y_previous as variables
-    temp = unit_speed
+    temp = unit_speed/*
     if ((as_map_getcell(obj_map.map,(x-5)/col_width,(y-5)/row_height) &lt; 0) ||
         (as_map_getcell(obj_map.map,(x+5)/col_width,(y-5)/row_height) &lt; 0) ||
         (as_map_getcell(obj_map.map,(x-5)/col_width,(y+5)/row_height) &lt; 0) ||
@@ -1282,7 +1282,7 @@ if (collide &amp;&amp; !able_to_move &amp;&amp; !gathering) {
             y = yprevious   
             unit_speed = 0
     }
-    
+    */
     
     speed = unit_speed
     move_towards_point(coll_x, coll_y, unit_speed);

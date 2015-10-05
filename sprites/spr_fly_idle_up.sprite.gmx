@@ -10,7 +10,7 @@
   <bbox_left>19</bbox_left>
   <bbox_right>78</bbox_right>
   <bbox_top>21</bbox_top>
-  <bbox_bottom>81</bbox_bottom>
+  <bbox_bottom>82</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -25,5 +25,6 @@
     <frame index="2">images\spr_fly_idle_up_2.png</frame>
     <frame index="3">images\spr_fly_idle_up_3.png</frame>
     <frame index="4">images\spr_fly_idle_up_4.png</frame>
+    <frame index="5">images\spr_fly_idle_up_5.png</frame>
   </frames>
 </sprite>
