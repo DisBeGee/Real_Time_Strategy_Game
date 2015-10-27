@@ -243,6 +243,19 @@ global.obj_building_type[4,6] = obj_p6_building_forge;
 global.obj_building_type[4,7] = obj_p7_building_forge;
 global.obj_building_type[4,8] = obj_p8_building_forge;
 global.obj_building_type[4,9] = obj_p9_building_forge;
+
+// obj_p#_building_resources
+
+global.obj_building_type[5,0] = obj_p0_building_resources;
+global.obj_building_type[5,1] = obj_p1_building_resources;
+global.obj_building_type[5,2] = obj_p2_building_forge;
+global.obj_building_type[5,3] = obj_p3_building_forge;
+global.obj_building_type[5,4] = obj_p4_building_forge;
+global.obj_building_type[5,5] = obj_p5_building_forge;
+global.obj_building_type[5,6] = obj_p6_building_forge;
+global.obj_building_type[5,7] = obj_p7_building_forge;
+global.obj_building_type[5,8] = obj_p8_building_forge;
+global.obj_building_type[5,9] = obj_p9_building_forge;
 </string>
           </argument>
         </arguments>

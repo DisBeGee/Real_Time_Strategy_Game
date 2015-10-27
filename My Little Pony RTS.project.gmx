@@ -298,6 +298,11 @@
         <sprite>sprites\spr_barracks_dark</sprite>
         <sprite>sprites\spr_barracks_mask</sprite>
       </sprites>
+      <sprites name="resources">
+        <sprite>sprites\spr_resources_yes</sprite>
+        <sprite>sprites\spr_resources_no</sprite>
+        <sprite>sprites\spr_resources_dark</sprite>
+      </sprites>
     </sprites>
     <sprites name="Attackhorse">
       <sprites name="stand">
@@ -491,14 +496,6 @@
     <font>fonts\font_equestria_smaller</font>
   </fonts>
   <objects name="objects">
-    <objects name="Buildings">
-      <objects name="Template">
-        <object>objects\obj_building_parent</object>
-        <object>objects\obj_building_template</object>
-      </objects>
-      <object>objects\obj_building_template_true</object>
-      <object>objects\peonhouse</object>
-    </objects>
     <objects name="Resources">
       <objects name="Template">
         <object>objects\obj_resource_parent</object>
@@ -507,7 +504,6 @@
       <object>objects\obj_res_template</object>
       <object>objects\TreeResource</object>
       <object>objects\RockResource</object>
-      <object>objects\obj_res_gold</object>
       <object>objects\ImpassableSpace</object>
       <objects name="Cliffs">
         <object>objects\CliffGrass</object>
@@ -525,6 +521,14 @@
         <object>objects\object291</object>
         <object>objects\EntireCliffs</object>
       </objects>
+    </objects>
+    <objects name="Buildings">
+      <objects name="Template">
+        <object>objects\obj_building_parent</object>
+        <object>objects\obj_building_template</object>
+      </objects>
+      <object>objects\obj_building_template_true</object>
+      <object>objects\peonhouse</object>
     </objects>
     <objects name="Setup">
       <object>objects\obj_control_ingame</object>
@@ -750,6 +754,7 @@
           <object>objects\obj_building_forge</object>
           <object>objects\obj_building_barracks</object>
           <object>objects\obj_building_headquarters_multi</object>
+          <object>objects\obj_building_resources_multi</object>
         </objects>
         <objects name="Player0">
           <objects name="Template">
@@ -758,6 +763,7 @@
           </objects>
           <object>objects\obj_p0_building_example</object>
           <object>objects\obj_p0_building_headquarters</object>
+          <object>objects\obj_p0_building_resources</object>
           <object>objects\obj_p0_building_forge</object>
           <object>objects\obj_p0_building_barracks</object>
         </objects>
@@ -768,6 +774,7 @@
           </objects>
           <object>objects\obj_p1_building_example</object>
           <object>objects\obj_p1_building_headquarters</object>
+          <object>objects\obj_p1_building_resources</object>
           <object>objects\obj_p1_building_forge</object>
           <object>objects\obj_p1_building_barracks</object>
         </objects>
@@ -889,6 +896,7 @@
         </objects>
         <object>objects\obj_building1_template</object>
         <object>objects\object260</object>
+        <object>objects\obj_button_build_rscs</object>
         <object>objects\obj_button_build_forge</object>
       </objects>
       <objects name="Build Queue">
@@ -931,7 +939,17 @@
       <room>rooms\rm_multi_lobby</room>
     </rooms>
   </rooms>
-  <constants number="3">
+  <constants number="13">
+    <constant name="AIRF_BUILD">6</constant>
+    <constant name="RSRC_BUILD">5</constant>
+    <constant name="FORG_BUILD">4</constant>
+    <constant name="BRAX_BUILD">3</constant>
+    <constant name="HEAD_BUILD">2</constant>
+    <constant name="FLY_HORSE">6</constant>
+    <constant name="HVY_HORSE">5</constant>
+    <constant name="RNG_HORSE">4</constant>
+    <constant name="ATK_HORSE">3</constant>
+    <constant name="WRK_HORSE">2</constant>
     <constant name="OWNER">0</constant>
     <constant name="ALLY">1</constant>
     <constant name="ENEMY">2</constant>

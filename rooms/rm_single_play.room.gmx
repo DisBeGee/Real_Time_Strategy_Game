@@ -304,7 +304,7 @@
     <instance objName="obj_unit_template_true" x="448" y="1104" name="inst_6102C29C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unit_template_true" x="512" y="1136" name="inst_A5E92163" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unit_template_true" x="528" y="1168" name="inst_66A418E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_res_gold" x="336" y="1200" name="inst_649909CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_res_gold_OLD" x="336" y="1200" name="inst_649909CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unit_template_true" x="1008" y="448" name="inst_5E06C0CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unit_template_true" x="1040" y="448" name="inst_C841806A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unit_template_true" x="1072" y="448" name="inst_49796149" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

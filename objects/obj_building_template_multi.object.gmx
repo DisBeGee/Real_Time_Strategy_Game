@@ -236,7 +236,7 @@ able_to_move = false
 created_from_unit = false;
 building_started = false
 
-unit_creating = 0
+unit_creating = 99
 </string>
           </argument>
         </arguments>

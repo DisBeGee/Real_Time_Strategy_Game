@@ -36,7 +36,7 @@
 /*var*/ res_spr_full = 0; // the image index wich show the res at max
 /*var*/ res_spr_med = 0; // the image index wich show the res at medium
 /*var*/ res_spr_low = 0; // the image index wich show the res at low
-/*var*/ y_offset = 10
+/*var*/ 
 /*var*/ 
 /*var*/ 
 
