@@ -505,6 +505,7 @@
       <object>objects\TreeResource</object>
       <object>objects\RockResource</object>
       <object>objects\ImpassableSpace</object>
+      <object>objects\obj_ghost_resource</object>
       <objects name="Cliffs">
         <object>objects\CliffGrass</object>
         <object>objects\BIGCliffGrass</object>
@@ -884,6 +885,7 @@
       <object>objects\obj_tempblock</object>
       <object>objects\obj_enem_parent</object>
       <object>objects\obj_blocked_by_building_parent</object>
+      <object>objects\obj_ally</object>
     </objects>
     <objects name="Buttons">
       <object>objects\obj_button_template</object>

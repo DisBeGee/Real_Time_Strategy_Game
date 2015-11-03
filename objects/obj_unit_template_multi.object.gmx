@@ -355,6 +355,11 @@ collide_building = 0;
 toggle_resource = false
 switch_to_resource = false
 collide_gathering = 0
+
+if (global.PlayerId == ownerId) {
+    ghost_ID = instance_create(x,y,obj_ally);
+    ghost_ID.unit_ghost_of = id;
+}
 </string>
           </argument>
         </arguments>
@@ -837,6 +842,8 @@ for (i=0;i&lt;global.ServerPlyrCnt+1;i+=1) {
     }
 }
 
+
+
 //todo with movement
 /*if able_to_move = true || gathering = true
 {
@@ -1043,6 +1050,8 @@ else {
 //if (!object_is_ancestor(self.object_index,obj_enem_parent))
 if (team != ENEMY)
 {
+    ghost_ID.x = x
+    ghost_ID.y = y
 
     //Cliff c
     

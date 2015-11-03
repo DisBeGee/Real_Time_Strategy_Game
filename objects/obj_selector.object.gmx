@@ -193,6 +193,10 @@ for (m = 0; m&lt;2; m++) {
             break;
     }
     
+    if (tempobj == -1) { //Guards against player not having any flying units
+        continue;
+    }
+    
     //Takes all relevant objects and put it into sortable datastructure...
     //Fix this algorithm, make it grid based similar to starcraft 2
     var selection_grid = ds_grid_create(5,global.number_of_selected)
