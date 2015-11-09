@@ -54,6 +54,8 @@ alarm[0] = 1
 ghost_resource = instance_create(x,y,obj_ghost_resource)
 ghost_resource.sprite_copy = sprite_index
 ghost_resource.sprite_copy_sub = image_index
+ghost_resource.sprite_copy_offset = y_offset
+ghost_resource.cliff_sight = cliff_sight
 </string>
           </argument>
         </arguments>
@@ -78,6 +80,8 @@ ghost_resource.sprite_copy_sub = image_index
             <kind>1</kind>
             <string>as_map_setcell(obj_map.map,x/obj_map.map_col_width,((y)/obj_map.map_row_height),-1)
 as_map_setcell(obj_map.map,(x/obj_map.map_col_width)-1,((y)/obj_map.map_row_height),-1)
+
+
 
 </string>
           </argument>

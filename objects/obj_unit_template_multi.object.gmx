@@ -329,7 +329,7 @@ as_map_destroy(id.map);
 
 */
 
-unit_cliff_id = 0
+unit_cliff_id = 99 // Fixed bug that deletes all trees
 cliff_yet = 0
 
 //Determines allegiance of unit: Different for each multiplayer person | Check CONSTANTS for values

@@ -40,8 +40,10 @@ draw_sprite(SteppesOfWar,0,0,5);
 draw_background_tiled_ext(GrassFill_Dark,0,0,.5,.5,c_white,1);
 surface_reset_target();
 
+// This is surface that creates ground buildings
 global.building_surface = surface_create(room_width, room_height);
 
+global.cliff_asset_surface = surface_create(room_width, room_height);
 
 
 //Used for surface copying, along with CliffSidesLeft-&gt;Alarm and obj_fog_of_war-&gt;Alarm1
@@ -80,9 +82,19 @@ surface_set_target(global.building_surface)
 draw_clear_alpha(c_white,0)
 surface_reset_target()
 
+//This does a global redraw of assets to cliff surface
+surface_set_target(global.cliff_asset_surface)
+draw_clear_alpha(c_white,0)
+surface_reset_target()
+
+//This goes into ghosts' alarm methods and redraws buffer
 if (instance_exists(obj_ghost_building)) {
     obj_ghost_building.alarm[0] = 1
+    obj_ghost_resource.alarm[0] = 1
 }
+
+
+
 </string>
           </argument>
         </arguments>
@@ -116,6 +128,7 @@ surface_reset_target();
 
 surface_set_target(global.cliff_fog);
 draw_sprite(HalfMapCliff,0,0,0);
+draw_surface_ext(global.cliff_asset_surface, 0, 0, 1/2, 1/2, 0, c_white, 1);
 surface_reset_target();
 
 alarm[0]=1;
