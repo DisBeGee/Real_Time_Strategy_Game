@@ -90,11 +90,12 @@ surface_reset_target()
 //This goes into ghosts' alarm methods and redraws buffer
 if (instance_exists(obj_ghost_building)) {
     obj_ghost_building.alarm[0] = 1
-    obj_ghost_resource.alarm[0] = 1
+    
 }
 
-
-
+if (instance_exists(obj_ghost_resource)) {
+    obj_ghost_resource.alarm[0] = 1
+}
 </string>
           </argument>
         </arguments>

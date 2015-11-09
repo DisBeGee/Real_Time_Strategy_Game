@@ -142,7 +142,7 @@ else {depth = -y - room_height}
         as_map_setcell(obj_map.map,x/obj_map.map_col_width,((y)/obj_map.map_row_height),1)
         as_map_setcell(obj_map.map,(x/obj_map.map_col_width)-1,((y)/obj_map.map_row_height),1)
 
-        
+        ghost_resource.resource_destroyed = true
         instance_destroy();
     }
     else if ( (prev_threshold-resource_amount) &gt;= send_threshold )
