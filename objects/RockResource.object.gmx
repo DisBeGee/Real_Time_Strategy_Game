@@ -37,7 +37,7 @@
 /*var*/ res_spr_med = 1; // the image index wich show the res at medium
 /*var*/ res_spr_low = 2; // the image index wich show the res at low
 /*var*/ y_offset = 100
-/*var*/ 
+/*var*/ max_harvesting = 3
 /*var*/ 
 
 </string>

@@ -94,10 +94,11 @@ if (!cliff_sight) {
     draw_sprite_ext(sprite_copy,sprite_copy_sub,x,y-sprite_copy_offset,1,1,0,c_black,.7)
     surface_reset_target()
 }
-else {
-    surface_set_target(global.cliff_asset_surface)
-    draw_sprite_ext(sprite_copy,sprite_copy_sub,x,y-sprite_copy_offset,1,1,0,c_white,1)
-    draw_sprite_ext(sprite_copy,sprite_copy_sub,x,y-sprite_copy_offset,1,1,0,c_black,.7)
+
+else if (cliff_sight) {
+    surface_set_target(global.cliff_fog_asset)
+    draw_sprite_ext(sprite_copy,sprite_copy_sub,x/2,(y-sprite_copy_offset)/2,1/2,1/2,0,c_white,1)
+    draw_sprite_ext(sprite_copy,sprite_copy_sub,x/2,(y-sprite_copy_offset)/2,1/2,1/2,0,c_black,.7)
     surface_reset_target()
 }
 </string>

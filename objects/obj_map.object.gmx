@@ -47,6 +47,15 @@ if (debug) {
     
 
 }
+
+for (i=0;i&lt;room_width;i+=map_col_width) {
+    for (z=0;z&lt;room_height;z+=map_row_height) {
+        //ds_grid_set(grid,i,z,(as_map_getcell(map,i/map_col_width,z/map_row_height)))
+        if (cell[i/map_col_width,z/map_row_height] != as_map_getcell(map,i/map_col_width,z/map_row_height)) {
+            cell[i/map_col_width,z/map_row_height] = as_map_getcell(map,i/map_col_width,z/map_row_height)
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -69,14 +78,7 @@ if (debug) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (i=0;i&lt;room_width;i+=map_col_width) {
-    for (z=0;z&lt;room_height;z+=map_row_height) {
-        //ds_grid_set(grid,i,z,(as_map_getcell(map,i/map_col_width,z/map_row_height)))
-        if (cell[i/map_col_width,z/map_row_height] != as_map_getcell(map,i/map_col_width,z/map_row_height)) {
-            cell[i/map_col_width,z/map_row_height] = as_map_getcell(map,i/map_col_width,z/map_row_height)
-        }
-    }
-}
+            <string>
 if (debug) {
     surface_set_target(debug_surface)
     draw_clear(c_white)
