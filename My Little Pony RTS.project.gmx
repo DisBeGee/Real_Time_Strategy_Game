@@ -466,6 +466,11 @@
       <sprite>sprites\spr_fly_icon_cutiemark</sprite>
       <sprite>sprites\spr_fly_cutiemark</sprite>
     </sprites>
+    <sprites name="Projectiles">
+      <sprites name="Apple">
+        <sprite>sprites\spr_apple_proj</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\CliffsTile</background>
@@ -566,6 +571,7 @@
       </objects>
       <objects name="Attacks">
         <object>objects\obj_projectile_template</object>
+        <object>objects\obj_projectile_apple</object>
       </objects>
       <objects name="Spells">
         <object>objects\obj_projectile_fireball</object>

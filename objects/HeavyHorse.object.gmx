@@ -142,17 +142,31 @@
 /*var*/ attack_type = 1; //0 = close, 1 = long ranged, 2 = other
 /*var*/ attack_range = 100; // was 2 please change back  - FOR BOTH RANGED AND MELEE
 /*var*/ autoattack_range = 200; // -- please change back to 250
-/*var*/ attack_cooldown = 32; //attack_cooldown
+/*var*/ attack_cooldown = 16; //attack_cooldown
 /*var*/ atk_spr_length = 16; // how long or how many diff sprites you attack animation has - MELEE ONLY
 /*var*/ atk_spr_hit = 1; // for attempt 2, the image num where the unit would of hit the target - MELEE ONLY
-/*var*/ attack_range_obj = obj_projectile_template; // the object that is your ranged projectile - RANGED ONLY
-/*var*/ attack_range_speed = 9; // speed of the projectile - RANGED ONLY
+/*var*/ attack_range_obj = obj_projectile_apple; // the object that is your ranged projectile - RANGED ONLY
+/*var*/ attack_range_speed = 18; // speed of the projectile - RANGED ONLY
 /*var*/ attack_range_AOE = 1; // area of effect of projectile - RANGED ONLY
 /*var*/ attackable_units = obj_enem_parent; // units that are enemys - the ones that are auto attacked
 /*var*/ atk_spr_rng_hit = 4; // the image num where the unit would of shot the projectile - RANGED ONLY
 /*var*/ 
-/*var*/ 
-/*var*/ 
+/*var*/ atk_proj_x[0] = 0; //DOWN
+/*var*/ atk_proj_y[0] = 0;
+/*var*/ atk_proj_x[1] = 0; //DOWNRIGHT
+/*var*/ atk_proj_y[1] = 0;
+/*var*/ atk_proj_x[2] = 0; //RIGHT
+/*var*/ atk_proj_y[2] = -70;
+/*var*/ atk_proj_x[3] = 0; //UPRIGHT
+/*var*/ atk_proj_y[3] = -70;
+/*var*/ atk_proj_x[4] = 0; //UP
+/*var*/ atk_proj_y[4] = 0;
+/*var*/ atk_proj_x[5] = 0; //UPLEFT
+/*var*/ atk_proj_y[5] = -70;
+/*var*/ atk_proj_x[6] = 0; //LEFT
+/*var*/ atk_proj_y[6] = -70;
+/*var*/ atk_proj_x[7] = 0; //DOWNLEFT
+/*var*/ atk_proj_y[7] = 0;
 /*var*/ 
 /*var*/ 
 /*var*/ 

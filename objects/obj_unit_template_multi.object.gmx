@@ -356,10 +356,12 @@ toggle_resource = false
 switch_to_resource = false
 collide_gathering = 0
 
-if (global.PlayerId == ownerId) {
+//if (global.PlayerId == ownerId) {
     ghost_ID = instance_create(x,y,obj_ally);
     ghost_ID.unit_ghost_of = id;
-}
+//}
+
+dir = 0
 </string>
           </argument>
         </arguments>
@@ -1050,9 +1052,10 @@ else {
 //if (!object_is_ancestor(self.object_index,obj_enem_parent))
 if (team != ENEMY)
 {
-    ghost_ID.x = x
-    ghost_ID.y = y
-
+    if (global.PlayerId == ownerId) {
+        ghost_ID.x = x
+        ghost_ID.y = y
+    }
     //Cliff c
     
     //if (tile_layer_find(999999,x,y) &gt; 10000) { // If it CAN see on cliffs
@@ -1623,7 +1626,7 @@ if attack_mode = true &amp;&amp; distance_to_object(attack_target) &lt;= attack_
             if state = 2 &amp;&amp; image_index = atk_spr_rng_hit
             {
             //actuall ranged stuff goes here
-                tmp_rng = instance_create(x,y,attack_range_obj);
+                tmp_rng = instance_create(x+atk_proj_x[dir],y+atk_proj_y[dir],attack_range_obj);
                 tmp_rng.fastness = attack_range_speed;
                 tmp_rng.targetx = attack_target.x;//to make this homeing just use tmp_enemy.x in the projectile object
                 tmp_rng.targety = attack_target.y;//to make this homeing just use tmp_enemy.x in the projectile object
@@ -2697,14 +2700,14 @@ if (collide &gt; 0) {
 }
 
 draw_set_alpha(1)
-if direction &gt; 247 &amp;&amp; direction &lt; 292 {draw_sprite(state_anim[state,0],-1,x,y-y_offset);}
-if direction &gt; 292 &amp;&amp; direction &lt; 350 {draw_sprite(state_anim[state,1],-1,x,y-y_offset);}
-if (direction &gt; 350 &amp;&amp; direction &lt; 360) or (direction &gt;= 0 &amp;&amp; direction &lt; 10) {draw_sprite(state_anim[state,2],-1,x,y-y_offset);}
-if direction &gt; 10 &amp;&amp; direction &lt; 67 {draw_sprite(state_anim[state,3],-1,x,y-y_offset);}
-if direction &gt; 67 &amp;&amp; direction &lt; 112 {draw_sprite(state_anim[state,4],-1,x,y-y_offset);}
-if direction &gt; 112 &amp;&amp; direction &lt; 170 {draw_sprite(state_anim[state,5],-1,x,y-y_offset);}
-if direction &gt; 170 &amp;&amp; direction &lt; 190 {draw_sprite(state_anim[state,6],-1,x,y-y_offset);}
-if direction &gt; 190 &amp;&amp; direction &lt; 247 {draw_sprite(state_anim[state,7],-1,x,y-y_offset);}
+if direction &gt; 247 &amp;&amp; direction &lt; 292 {draw_sprite(state_anim[state,0],-1,x,y-y_offset); dir = 0}
+if direction &gt; 292 &amp;&amp; direction &lt; 350 {draw_sprite(state_anim[state,1],-1,x,y-y_offset); dir = 1}
+if (direction &gt; 350 &amp;&amp; direction &lt; 360) or (direction &gt;= 0 &amp;&amp; direction &lt; 10) {draw_sprite(state_anim[state,2],-1,x,y-y_offset); dir = 2}
+if direction &gt; 10 &amp;&amp; direction &lt; 67 {draw_sprite(state_anim[state,3],-1,x,y-y_offset); dir = 3}
+if direction &gt; 67 &amp;&amp; direction &lt; 112 {draw_sprite(state_anim[state,4],-1,x,y-y_offset); dir = 4}
+if direction &gt; 112 &amp;&amp; direction &lt; 170 {draw_sprite(state_anim[state,5],-1,x,y-y_offset); dir = 5}
+if direction &gt; 170 &amp;&amp; direction &lt; 190 {draw_sprite(state_anim[state,6],-1,x,y-y_offset); dir = 6}
+if direction &gt; 190 &amp;&amp; direction &lt; 247 {draw_sprite(state_anim[state,7],-1,x,y-y_offset); dir = 7}
 
 if (collide &gt; 0) {
     direction = temp_direction_two

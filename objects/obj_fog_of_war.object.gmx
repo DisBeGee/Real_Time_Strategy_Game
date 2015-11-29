@@ -69,7 +69,7 @@ surface_reset_target();
 // This is surface that creates ground buildings
 global.building_surface = surface_create(room_width, room_height);
 
-global.cliff_asset = surface_create(room_width, room_height);
+//global.cliff_asset = surface_create(room_width, room_height);
 
 
 //Used for surface copying, along with CliffSidesLeft-&gt;Alarm and obj_fog_of_war-&gt;Alarm1
