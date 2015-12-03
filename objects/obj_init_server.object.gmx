@@ -43,7 +43,7 @@ global.ServerSocket = -1;
 global.ServerPlyrCnt = 0;
 global.isHost = true;
 //temp
-global.ClientName = get_string("Enter your player name",global.ClientName);
+//global.ClientName = get_string("Enter your player name",global.ClientName);
 
 global.isHost = true;
 

@@ -27,6 +27,17 @@
             <kind>1</kind>
             <string>global.multiplayer_game = true;
 
+if (global.host) {
+    instance_create(0,0,obj_init_server);
+    global.ClientName = "player"
+}
+else {
+    instance_create(0,0,obj_init_client);
+    //global.ClientName needs to be messed with
+    //global.ServerAddr needs to be messed with
+}
+
+/*
 //answer = show_message_ext("Host new game or connect to a server?", "Host", "Connect", "Back");
 answer = show_question("True to Host, False to Connect");
 

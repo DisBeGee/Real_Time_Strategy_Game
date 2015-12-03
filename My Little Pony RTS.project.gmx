@@ -471,6 +471,10 @@
         <sprite>sprites\spr_apple_proj</sprite>
       </sprites>
     </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\spr_menu_host</sprite>
+      <sprite>sprites\spr_menu_connect</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\CliffsTile</background>
@@ -483,6 +487,7 @@
     <background>background\BigGrass</background>
     <background>background\CliffMinimap</background>
     <background>background\CliffTiles</background>
+    <background>background\Menu</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -931,8 +936,14 @@
         <object>objects\obj_button_spell_grenade</object>
       </objects>
     </objects>
+    <objects name="Menu">
+      <object>objects\obj_menu</object>
+      <object>objects\obj_connect</object>
+      <object>objects\obj_server_txt_box</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
     <room>rooms\rm_choose</room>
     <room>rooms\rm_single_play</room>
     <rooms name="Multiplayer">
