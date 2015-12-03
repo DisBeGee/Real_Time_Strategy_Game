@@ -109,7 +109,7 @@ draw_clear_alpha(c_white,0)
 surface_reset_target()
 
 //This does a global redraw of assets to cliff surface
-surface_set_target(global.cliff_asset_surface)
+surface_set_target(global.cliff_fog_asset)
 draw_clear_alpha(c_white,0)
 surface_reset_target()
 

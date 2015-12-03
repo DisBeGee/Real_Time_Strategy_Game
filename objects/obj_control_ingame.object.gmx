@@ -131,9 +131,27 @@ if view_yview[0] &lt; 0 { view_yview[0] = 0; }
 if view_xview[0]+view_wview &gt; room_width { view_xview[0] = room_width-view_wview[0]; }
 if view_yview[0]+view_hview &gt; room_height+hud_buffer { view_yview[0] = room_height-view_hview[0]+hud_buffer; }
 // - view control - end
+
+
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="123">
+      <action>
+        <libid>1</libid>
+        <id>332</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_game</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
