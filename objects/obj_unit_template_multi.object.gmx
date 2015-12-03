@@ -362,6 +362,8 @@ collide_gathering = 0
 //}
 
 dir = 0
+
+hp_cooldown = 20
 </string>
           </argument>
         </arguments>

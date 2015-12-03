@@ -620,6 +620,10 @@ else if (msg==1002) // update unit for damage taken
     if (instance_exists(unitId))
     {
         unitId.unit_hp -= damageTaken;
+        
+        with(unitId) {
+            draw_sprite(spr_splat,0,x,y)
+        }
     
         //broadcast health update
         write_ushort(global.ServerSocket,20); // message id: broadcast message

@@ -156,8 +156,11 @@ if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+len
 if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+length) &amp;&amp; mouse_y &gt;= (view_yview+ypos+10) &amp;&amp; mouse_y &lt;= (view_yview+ypos+height+10)
 {
 
-    x_mouse = display_mouse_get_x() - window_get_x();
-    y_mouse = display_mouse_get_y() - window_get_y();    
+    //x_mouse = display_mouse_get_x() - window_get_x();
+    //y_mouse = display_mouse_get_y() - window_get_y();
+    x_mouse = window_mouse_get_x() - window_get_x();
+    y_mouse = window_mouse_get_y() - window_get_y() - 100;       
+    //y_mouse = mouse_y - view_yview[0]
 
     /*bug fix*/instance_deactivate_object(obj_selector);active=true;
     ex = (room_width/length)*(x_mouse/*-view_xview[0]*/-xpos);
