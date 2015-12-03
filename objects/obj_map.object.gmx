@@ -99,6 +99,17 @@ if (debug) {
     }
     surface_reset_target()
 }
+
+//This is for the recalculation of building collisions
+for (i=0;i&lt;room_width;i+=map_col_width) {
+    for (z=0;z&lt;room_height;z+=map_row_height) {
+        //ds_grid_set(grid,i,z,(as_map_getcell(map,i/map_col_width,z/map_row_height)))
+        if (cell[i/map_col_width,z/map_row_height] != as_map_getcell(map,i/map_col_width,z/map_row_height)) {
+            cell[i/map_col_width,z/map_row_height] = as_map_getcell(map,i/map_col_width,z/map_row_height)
+        }
+    }
+}
+
 alarm[0] = 100
 </string>
           </argument>

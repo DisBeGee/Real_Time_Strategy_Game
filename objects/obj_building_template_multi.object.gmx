@@ -573,7 +573,7 @@ if (team == ENEMY ) {
         }
     } */
     if !ghost_building {
-        while (all_collision_ellipse(x-ghost_fog_w, y-ghost_fog_h, x+ghost_fog_w, y+ghost_fog_h, obj_p0_unit_parent, false, true)) {
+        while (all_collision_ellipse(x-ghost_fog_w, y-ghost_fog_h, x+ghost_fog_w, y+ghost_fog_h, obj_unit_parent, false, true)) {
             if (global._id.team == ALLY) {
                 ghost_building = instance_create(x,y,obj_ghost_building)
                 ghost_building.sprite_copy = sprite_index
