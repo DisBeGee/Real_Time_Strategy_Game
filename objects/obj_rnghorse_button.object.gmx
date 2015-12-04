@@ -36,7 +36,7 @@
 
 // Building Variables
 /*var*/ buildv_unit = Wrkhorse; // the unit that will be created using this button
-/*var*/ buildv_time = 20; // how long it takes to build the unit (20 = about 3 seconds (NOTE! higher values decease the time, lower values increase time))
+/*var*/ buildv_time = 4; // how long it takes to build the unit (20 = about 3 seconds (NOTE! higher values decease the time, lower values increase time))
 /*var*/ buildv_name = "Bazooka Unit"; // Name of the unit being built
 /*var*/ buildv_icon = spr_rng_icon_cutiemark; // icon used when the unit is being built
 /*var*/ //buildv_cost
@@ -47,15 +47,15 @@ buildv_unit_type = 4; // index of unit to be built (found in create event of obj
 /* Network only - end */
 
 // Resource costs
-rcost1 = 0;
-rcost2 = 0;
+rcost1 = 100;
+rcost2 = 30;
 rcost3 = 0;
 rcost4 = 0;
 rcost5 = 0;
 
 //tooltip system
-/*var*/ text[0] = "Build Unit (0)"
-/*var*/ text[1] = "Gold: 0, Wood: 0"
+/*var*/ text[0] = "Build Ranged Unit (0)"
+/*var*/ text[1] = "Stone: 30, Wood: 100"
 /*var*/ text[2] = "Builds the example unit"
 /*var*/ text[3] = ""
 /*var*/ text[4] = ""

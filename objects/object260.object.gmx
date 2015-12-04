@@ -41,7 +41,7 @@ building_type = 2; // the index of the building to be built (indeces found in cr
 /* Network only - start */
 
 // Resource costs
-rcost1 = 0;
+rcost1 = 500;
 rcost2 = 0;
 rcost3 = 0;
 rcost4 = 0;
@@ -49,7 +49,7 @@ rcost5 = 0;
 
 //tooltip system
 /*var*/ text[0] = "Build Building (0)"
-/*var*/ text[1] = "Wood: 0, Gold: 0"
+/*var*/ text[1] = "Wood: 500, Stone: 200"
 /*var*/ text[2] = "Builds the example building"
 /*var*/ text[3] = ""
 /*var*/ text[4] = ""

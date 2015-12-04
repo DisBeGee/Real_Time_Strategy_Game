@@ -923,6 +923,7 @@
         <object>objects\obj_building1_template</object>
         <object>objects\object260</object>
         <object>objects\obj_button_build_rscs</object>
+        <object>objects\obj_button_build_barracks</object>
         <object>objects\obj_button_build_forge</object>
       </objects>
       <objects name="Build Queue">

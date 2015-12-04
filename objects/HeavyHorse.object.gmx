@@ -53,11 +53,11 @@
 /*var*/ 
 /*var*/ 
 /* - Stats - */
-/*var*/ unit_speed = 3;
+/*var*/ unit_speed = 2;
 /*var*/ unit_area = 200; 
 /*var*/ unit_hp = 20;
 /*var*/ unit_hp_max = 20;
-/*var*/ unit_damage = 3;
+/*var*/ unit_damage = 10;
 /*var*/ unit_damage_range = 1;
 /*var*/ unit_name = "Galloping Gattling Gunner"
 /*var*/ 
@@ -140,16 +140,16 @@
 /*var*/ iscratorer = false; //if it can build buildings
 /* - Atakking - */
 /*var*/ attack_type = 1; //0 = close, 1 = long ranged, 2 = other
-/*var*/ attack_range = 100; // was 2 please change back  - FOR BOTH RANGED AND MELEE
+/*var*/ attack_range = 200; // was 2 please change back  - FOR BOTH RANGED AND MELEE
 /*var*/ autoattack_range = 200; // -- please change back to 250
-/*var*/ attack_cooldown = 16; //attack_cooldown
-/*var*/ atk_spr_length = 16; // how long or how many diff sprites you attack animation has - MELEE ONLY
+/*var*/ attack_cooldown = 8; //attack_cooldown
+/*var*/ atk_spr_length = 4; // how long or how many diff sprites you attack animation has - MELEE ONLY
 /*var*/ atk_spr_hit = 1; // for attempt 2, the image num where the unit would of hit the target - MELEE ONLY
 /*var*/ attack_range_obj = obj_projectile_apple; // the object that is your ranged projectile - RANGED ONLY
 /*var*/ attack_range_speed = 18; // speed of the projectile - RANGED ONLY
 /*var*/ attack_range_AOE = 1; // area of effect of projectile - RANGED ONLY
 /*var*/ attackable_units = obj_enem_parent; // units that are enemys - the ones that are auto attacked
-/*var*/ atk_spr_rng_hit = 4; // the image num where the unit would of shot the projectile - RANGED ONLY
+/*var*/ atk_spr_rng_hit = 1; // the image num where the unit would of shot the projectile - RANGED ONLY
 /*var*/ 
 /*var*/ atk_proj_x[0] = 0; //DOWN
 /*var*/ atk_proj_y[0] = 0;

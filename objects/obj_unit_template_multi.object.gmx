@@ -1200,6 +1200,9 @@ if unit_hp  &lt;= 0
     } 
     //death animation here
     instance_create(x,y,obj_explo_2);
+    
+
+    
     instance_destroy(); 
 }
 else if (unit_hp &gt; unit_hp_max)
@@ -1411,6 +1414,10 @@ if (able_to_move) {
         goy = y
         alarm[6] = 1 
         able_to_move = false
+    }
+    else if (gathering) {
+        move_x = res_x
+        move_y = res_y
     }
     // I don't even know anymore i"m just coding for the hell of it
     else {
@@ -1795,6 +1802,7 @@ if ispeon = true &amp;&amp; gathering = true
             {
                 //If resource target has too many people harvesting it
                 if (grout_target.num_harvesting &gt;= grout_target.max_harvesting) {
+                    
                     grout_target = scr_get_other_resource(grout_target.x,grout_target.y, grout_object, grout_target.id)
                     if (grout_target &gt; 0) {
                         grout_object = grout_target.object_index;
@@ -1809,6 +1817,7 @@ if ispeon = true &amp;&amp; gathering = true
                     able_to_move = false;
                     if can_gather = true
                     {
+                        speed = 0
                         able_to_move = false;
                         alarm[1] = gathercooldown;
                         can_gather = false;

@@ -27,10 +27,10 @@
             <kind>1</kind>
             <string>/* - Setup - */
 /*var*/ type = 0; // 0 = mining, 1 = collect
-/*var*/ area_size = 10; // collection radius of res, in pixels
+/*var*/ area_size = 15; // collection radius of res, in pixels
 /*var*/ resource_num = 1;
-/*var*/ resource_amount = 100; // how many resources you can gather from this
-/*var*/ resource_amount_max = 100;
+/*var*/ resource_amount = 300; // how many resources you can gather from this
+/*var*/ resource_amount_max = 300;
 /*var*/ resource_name = "Tree";
 /*var*/ res_spr = MLPTree; // the res graphic
 /*var*/ res_spr_full = 0; // the image index wich show the res at max

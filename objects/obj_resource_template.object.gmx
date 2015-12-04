@@ -199,7 +199,7 @@ if resource_amount &lt; resource_amount_max/3
 
 //debug
 //draw_text(x,y,string(resource_amount))
-
+/*
 //DBG draw BOUNDING BOX debug
 draw_set_color(c_red);
 draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,true)

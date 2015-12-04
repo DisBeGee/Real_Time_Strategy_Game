@@ -238,7 +238,7 @@ building_started = false
 
 unit_creating = 99
 
-
+main_base = false
 </string>
           </argument>
         </arguments>
@@ -278,6 +278,8 @@ unit_creating = 99
         }
     }
 //}
+
+
 </string>
           </argument>
         </arguments>
@@ -387,6 +389,10 @@ if (unit_hp  &lt;= 0)// || keyboard_check_pressed(vk_anykey))
             
             }
         }
+    }
+    
+    if (main_base) {
+        show_message("You lose!")
     }
     
     instance_destroy(); 
@@ -1052,7 +1058,7 @@ if (team == ENEMY)
     draw_rectangle(x-8, y-16, x+8, y+16, true);
     
     //Debug for fog of war
-    draw_ellipse(x-ghost_fog_w, y-ghost_fog_h, x+ghost_fog_w, y+ghost_fog_h, true);
+    //draw_ellipse(x-ghost_fog_w, y-ghost_fog_h, x+ghost_fog_w, y+ghost_fog_h, true);
 
 }
 else

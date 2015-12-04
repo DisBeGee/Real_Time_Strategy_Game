@@ -47,15 +47,15 @@ buildv_unit_type = 6; // index of unit to be built (found in create event of obj
 /* Network only - end */
 
 // Resource costs
-rcost1 = 0;
-rcost2 = 0;
+rcost1 = 300;
+rcost2 = 20;
 rcost3 = 0;
 rcost4 = 0;
 rcost5 = 0;
 
 //tooltip system
-/*var*/ text[0] = "Build Unit (0)"
-/*var*/ text[1] = "Gold: 0, Wood: 0"
+/*var*/ text[0] = "Build Flying Unit (0)"
+/*var*/ text[1] = "Gold: 20, Wood: 300"
 /*var*/ text[2] = "Builds the example unit"
 /*var*/ text[3] = ""
 /*var*/ text[4] = ""

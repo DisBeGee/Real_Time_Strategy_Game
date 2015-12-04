@@ -44,7 +44,8 @@
 /* var */ anim[4] = spr_man_up_arrow
 /* var */ anim[5] = spr_man_upleft_arrow
 /* var */ anim[6] = spr_man_left_arrow
-/* var */ anim[7] = spr_man_downleft_arrow</string>
+/* var */ anim[7] = spr_man_downleft_arrow
+</string>
           </argument>
         </arguments>
       </action>

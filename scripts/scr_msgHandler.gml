@@ -384,6 +384,8 @@ else if (msg==805) // create building network id (service) (use this in combinat
     //create unit
     buildid = instance_create(xcreat,ycreat,global.obj_building_type[buildtype,buildowner]);
     
+
+    
     //set net id
     buildid.netId = buildnetid;
     // setup building so it is placed down
@@ -503,6 +505,11 @@ else if (msg==809) // create building fully built netid (service) (use with 808)
     
     //create building
     buildid = instance_create(xcreat,ycreat,global.obj_building_type[buildtype,buildowner]);
+    
+    if (global.main_base = false && buildowner == global.PlayerId) {
+        buildid.main_base = true
+        global.main_base = true
+    }
     
     //set net id
     buildid.netId = buildnetid;

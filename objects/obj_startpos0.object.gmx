@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>posId = 0;
 
+if (posId == global.PlayerId) {
+    global.main_base = false
+}
+
 hq_building = spr_headquarters_iso
 
 bbox_y = (sprite_get_bbox_bottom(hq_building) - sprite_get_bbox_top(hq_building))/2

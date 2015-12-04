@@ -70,10 +70,10 @@
           <argument>
             <kind>1</kind>
             <string>//move to target
-mp_linear_step(targetx,targety,fastness,false);// to make this homing, 1. change tagetx/y with target.x/y and use potential instead of linear
+move_towards_point(targetx,targety,fastness);// to make this homing, 1. change tagetx/y with target.x/y and use potential instead of linear
 
 // doing the damage
-if x = targetx &amp;&amp; y = targety
+if (distance_to_point(targetx,targety) &lt; fastness)//x = targetx &amp;&amp; y = targety
 {
     if instance_exists(target) &amp;&amp; distance_to_object(target) &lt;= aoe //dont use aoe, it doesnt work properly yet
     {
@@ -101,7 +101,7 @@ if x = targetx &amp;&amp; y = targety
 //check to see if it stuck
 if (prevx==x &amp;&amp; prevy==y)
 {
-    instance_destroy();
+    //instance_destroy();
 }
 else
 {

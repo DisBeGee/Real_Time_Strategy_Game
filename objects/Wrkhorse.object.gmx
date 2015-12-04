@@ -158,23 +158,23 @@
 /*var*/ 
 /*var*/ 
 /* - HUD - */
-/*var*/ hud_gen_s1 = obj_button_spell_star;
+/*var*/ hud_gen_s1 =  noone;//obj_button_spell_star;
 /*var*/ hud_gen_s2 = object260;
 /*var*/ hud_gen_s3 = obj_button_build_rscs;
-/*var*/ hud_gen_s4 = obj_button_test_large;
-/*var*/ hud_gen_s5 = obj_button_test_large;
+/*var*/ hud_gen_s4 = obj_button_build_barracks;
+/*var*/ hud_gen_s5 = noone//obj_button_test_large;
 /*var*/ hud_gen_s6 = noone;                    //Unused, keep at noone
-/*var*/ hud_gen_s7 = obj_button_test_large; //Unused, keep at noone
+/*var*/ hud_gen_s7 =  noone;//obj_button_test_large; //Unused, keep at noone
 /*var*/ hud_gen_s8 = noone;
 /*var*/ hud_gen_s9 = noone;
 /*var*/ hud_gen_s10 = noone;
 /*var*/ hud_gen_s11 = noone;
 /*var*/ hud_gen_s12 = noone; // Unused, keep at noone
-/*var*/ hud_gen_s13 = obj_button_test_large;
-/*var*/ hud_gen_s14 = obj_button_spell_scilence;
-/*var*/ hud_gen_s15 = obj_button_spell_cocktail;
-/*var*/ hud_gen_s16 = obj_button_spell_clight;
-/*var*/ hud_gen_s17 = obj_button_heal;
+/*var*/ hud_gen_s13 =  noone;//obj_button_test_large;
+/*var*/ hud_gen_s14 =  noone;//obj_button_spell_scilence;
+/*var*/ hud_gen_s15 =  noone;//obj_button_spell_cocktail;
+/*var*/ hud_gen_s16 =  noone;//obj_button_spell_clight;
+/*var*/ hud_gen_s17 =  noone;//obj_button_heal;
 /*var*/ hud_gen_s18 = noone; //Unused, keep at noone
 /*var*/ hud_build_s1 = noone;
 /*var*/ hud_build_s2 = noone;

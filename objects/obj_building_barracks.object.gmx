@@ -41,9 +41,9 @@
 /*var*/ g_build_num = 4; //number of sprites in the building animation
 /*var*/ 
 // - building stats - //
-/*var*/ unit_name = "temper to go"; 
-/*var*/ unit_hp_max = 1000;
-/*var*/ unit_hp = 1000;
+/*var*/ unit_name = "Barracks"; 
+/*var*/ unit_hp_max = 400;
+/*var*/ unit_hp = 400;
 /*var*/ 
 // - building of structure - //
 /*var*/ build_time = 300; //how long it takes to build
@@ -54,10 +54,10 @@
 /*var*/ waypoint_spr = spr_house_waypoint;
 /*var*/ 
 /* - HUD - */
-/*var*/ hud_gen_s1 = obj_unit1_template;
-/*var*/ hud_gen_s2 = obj_wrkhorse_button;
-/*var*/ hud_gen_s3 = 99;
-/*var*/ hud_gen_s4 = 99;
+/*var*/ hud_gen_s1 = obj_rnghorse_button;
+/*var*/ hud_gen_s2 = obj_hvyhorse_button;
+/*var*/ hud_gen_s3 = obj_mlehorse_button;
+/*var*/ hud_gen_s4 = obj_flyhorse_button;
 /*var*/ hud_gen_s5 = 99;
 /*var*/ hud_gen_s6 = 99;
 /*var*/ hud_gen_s7 = 99;
