@@ -28,10 +28,10 @@
             <string>/* - Setup - */
 /* var */ xpos = 0; //the x pos of it on the screen
 /* var */ //ypos = window_get_region_height() - 160 ; //the y pos of it on the screen
-/* var */ ypos = window_get_height() - 306 - 140 ; //the y pos of it on the screen
+/* var */ ypos = view_hview[0] * .67 ; //the y pos of it on the screen ** CHANGED TO PERCENT BASE SYSTEM
 /* var */ hud_spr = spr_HUD_celestia; // the sprite of the hud
 /* var */ target = 99; // the single unit or building that is selected
-/* var */ border = ypos + 120;//this is the distance from the top of the screen to to top edge of the hud spr
+/* var */ border = ypos + (ypos*.1);//this is the distance from the top of the screen to to top edge of the hud spr
 /* var */ 
 /* var */ 
 /* var */ 

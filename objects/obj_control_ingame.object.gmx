@@ -50,7 +50,7 @@ instance_create(x,y,obj_curs_gotomarker);
 
 //Setup View Variables - start
 view_speed = 20;
-hud_buffer = 140; //because the hud takes up some of the screen, the view should be able to go a little lower
+hud_buffer = view_hview[0] * .1; //because the hud takes up some of the screen, the view should be able to go a little lower
 //Setup View Variables - end
 
 
@@ -120,9 +120,9 @@ if mouse_check_button(mb_left) = false
     if mouse_x &lt;= view_xview[0] +1 { if view_xview[0]&gt;=0{  view_xview -= view_speed; } }
     if mouse_y &gt;= view_yview[0] + view_hview[0] -1 {if view_yview[0] + view_hview[0]&lt;= room_height + hud_buffer { view_yview[0] += view_speed; } }
     if mouse_y &lt;= view_yview[0] +1 { if view_yview[0]&gt;=0{  view_yview -= view_speed; } } */
-    if x_mouse &gt;= view_wview[0] -1 { if view_wview[0]&lt;=room_width { view_xview[0] += view_speed; } }
+    if x_mouse &gt;= window_get_width() -1 { if view_wview[0]&lt;=room_width { view_xview[0] += view_speed; } }
     if x_mouse &lt;= 1 { if view_xview[0]&gt;=0{  view_xview -= view_speed; } }
-    if y_mouse &gt;= view_hview[0] /* + hud_buffer*/ -1 {if view_hview[0]&lt;= room_height + hud_buffer { view_yview[0] += view_speed; } }
+    if y_mouse &gt;= window_get_height()/*view_hview[0]*/ /* + hud_buffer*/ -1 {if view_hview[0]&lt;= room_height + hud_buffer { view_yview[0] += view_speed; } }
     if y_mouse &lt;= 1 { if view_yview[0]&gt;=0{  view_yview -= view_speed; } }
 }
 

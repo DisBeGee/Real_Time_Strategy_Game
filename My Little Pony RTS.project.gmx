@@ -528,7 +528,6 @@
       <objects name="Cliffs">
         <object>objects\CliffGrass</object>
         <object>objects\BIGCliffGrass</object>
-        <object>objects\CliffSidesRight</object>
         <object>objects\CliffSidesLeft</object>
         <object>objects\CliffRocksBotLayer</object>
         <object>objects\CliffRocksBotLayerCartoon</object>

@@ -293,24 +293,6 @@ if (global.isHost) { instance_create(-100,-100,obj_server); }</code>
     <instance objName="HillToCliffsTopLayer" x="1024" y="416" name="inst_8535A475" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="HillToCliffsTopLayer" x="1056" y="432" name="inst_BF273FE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="HillToCliffsTopLayer" x="1088" y="448" name="inst_888822D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1504" y="288" name="inst_18CB6CDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1408" y="240" name="inst_3B3E9056" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1440" y="256" name="inst_11303556" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1472" y="272" name="inst_CD9B2AE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1376" y="224" name="inst_A8A8C3BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1344" y="208" name="inst_4D3C841F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1312" y="192" name="inst_E69230AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1280" y="176" name="inst_0F6EE89B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1248" y="160" name="inst_055DBD16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1216" y="144" name="inst_0ACA8F26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="960" y="240" name="inst_9D0750DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="992" y="224" name="inst_A76084CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1024" y="208" name="inst_37CBDEF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1056" y="192" name="inst_3175DA0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1088" y="176" name="inst_D9B499F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1120" y="160" name="inst_A4029E52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1152" y="144" name="inst_410C3297" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="CliffSidesRight" x="1184" y="128" name="inst_D2D8D4FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_p0_unit_workhorse" x="1472" y="1520" name="inst_6F6A7021" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

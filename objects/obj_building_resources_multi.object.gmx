@@ -55,9 +55,9 @@
 /*var*/ 
 /* - HUD - */
 /*var*/ hud_gen_s1 = 99;
-/*var*/ hud_gen_s2 = 9;
-/*var*/ hud_gen_s3 = 9;
-/*var*/ hud_gen_s4 = 9;
+/*var*/ hud_gen_s2 = 99;
+/*var*/ hud_gen_s3 = 99;
+/*var*/ hud_gen_s4 = 99;
 /*var*/ hud_gen_s5 = 99;
 /*var*/ hud_gen_s6 = 99;
 /*var*/ hud_gen_s7 = 99;

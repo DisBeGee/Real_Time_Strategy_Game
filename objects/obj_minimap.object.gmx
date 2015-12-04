@@ -153,18 +153,20 @@ if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+len
     if (obj_selector.draw) {exit}
 }
 
-if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+length) &amp;&amp; mouse_y &gt;= (view_yview+ypos+10) &amp;&amp; mouse_y &lt;= (view_yview+ypos+height+10)
+if mouse_x &gt;= (view_xview+xpos) &amp;&amp; mouse_x &lt;= (view_xview+xpos+length) &amp;&amp; mouse_y &gt;= (view_yview+ypos) &amp;&amp; mouse_y &lt;= (view_yview+ypos+height)
 {
 
     //x_mouse = display_mouse_get_x() - window_get_x();
     //y_mouse = display_mouse_get_y() - window_get_y();
-    x_mouse = window_mouse_get_x() - window_get_x();
-    y_mouse = window_mouse_get_y() - window_get_y() - 100;       
+    x_mouse = ((display_mouse_get_x())/ display_get_width()) * view_wview[0] - xpos//mouse_x - (view_xview+xpos);
+    y_mouse = ((display_mouse_get_y())/ display_get_height()) * view_hview[0] - ypos//mouse_y - (view_yview+ypos);       
     //y_mouse = mouse_y - view_yview[0]
 
     /*bug fix*/instance_deactivate_object(obj_selector);active=true;
-    ex = (room_width/length)*(x_mouse/*-view_xview[0]*/-xpos);
-    why = (room_height/height)*(y_mouse/*-view_yview[0]*/-ypos-10);
+    //ex = (room_width/length)*(x_mouse/*-view_xview[0]*/-xpos);
+    //why = (room_height/height)*(y_mouse/*-view_yview[0]*/-ypos-10);
+    ex = x_mouse * (room_width/length)
+    why = y_mouse * (room_height/height)
     view_xview[0] = ex - view_wview[0]/2;
     view_yview[0] = why - view_hview[0]/2;
 //Testing for minimap movement
