@@ -951,8 +951,6 @@ if (instance_exists(obj_building_template_multi)) {
     <instance objName="CliffSidesLeft" x="480" y="3408" name="inst_BD11B65A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="CliffSidesLeft" x="1888" y="3248" name="inst_51D8E86F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="CliffSidesLeft" x="1664" y="2528" name="inst_773EB1CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_p0_unit_rangedhorse" x="1344" y="2608" name="inst_608632F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_p1_unit_workhorse" x="2080" y="1248" name="inst_7C5C6131" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="TreeResource" x="2368" y="2624" name="inst_5C28C9B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="TreeResource" x="2048" y="2592" name="inst_ED1CDA21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="TreeResource" x="2144" y="2688" name="inst_1B20B5DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -962,10 +960,6 @@ if (instance_exists(obj_building_template_multi)) {
     <instance objName="TreeResource" x="2272" y="2528" name="inst_929A1067" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="TreeResource" x="608" y="2240" name="inst_C8F5855D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="TreeResource" x="512" y="2304" name="inst_A20FD69B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_p0_unit_flyinghorse" x="1184" y="2560" name="inst_286D08AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_p0_unit_atkhorse" x="1344" y="2720" name="inst_8A719972" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_p0_unit_heavyhorse" x="1088" y="2688" name="inst_06FF5D51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_p0_unit_workhorse" x="1216" y="2752" name="inst_3A754FA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_startpos0" x="736" y="2912" name="inst_A35F846D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_startpos1" x="5152" y="512" name="inst_384DAB74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="TreeResource" x="4032" y="416" name="inst_3D682275" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
