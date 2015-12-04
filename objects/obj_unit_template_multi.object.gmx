@@ -329,7 +329,7 @@ as_map_destroy(id.map);
 
 */
 
-unit_cliff_id = 99 // Fixed bug that deletes all trees
+unit_cliff_id = noone // Fixed bug that deletes all trees
 cliff_yet = 0
 
 //Determines allegiance of unit: Different for each multiplayer person | Check CONSTANTS for values
@@ -364,6 +364,8 @@ collide_gathering = 0
 dir = 0
 
 hp_cooldown = 20
+
+collide = 0
 </string>
           </argument>
         </arguments>
@@ -1286,7 +1288,6 @@ if (able_to_move == true &amp;&amp; attack_mode == false &amp;&amp; build_ing ==
 }
 
 //Collision:
-collide = 0
 collide = collision_ellipse(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_unit_parent,false,true)
 
 //New ifs for collision_building

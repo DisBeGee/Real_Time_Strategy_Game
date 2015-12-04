@@ -431,7 +431,8 @@ draw = false;
 //selection - end
 
 //advanced movement
-alarm[1]=1;</string>
+alarm[1]=1;
+</string>
           </argument>
         </arguments>
       </action>
