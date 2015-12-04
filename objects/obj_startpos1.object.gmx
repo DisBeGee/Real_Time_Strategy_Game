@@ -27,33 +27,37 @@
             <kind>1</kind>
             <string>posId = 1;
 
+hq_building = spr_headquarters_iso
+
+bbox_y = (sprite_get_bbox_bottom(hq_building) - sprite_get_bbox_top(hq_building))/2
+
 
 if (posId==global.random_start)
 {
     // create units
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,5); // type
+    write_ushort(global.ServerSocket,2); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
-    write_short(global.ServerSocket,x-30); // x
-    write_short(global.ServerSocket,y+30); // y
+    write_short(global.ServerSocket,x-45); // x
+    write_short(global.ServerSocket,y + bbox_y); // y
     
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,5); // type
+    write_ushort(global.ServerSocket,2); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
-    write_short(global.ServerSocket,x-10); // x
-    write_short(global.ServerSocket,y+30); // y
+    write_short(global.ServerSocket,x-135); // x
+    write_short(global.ServerSocket,y + bbox_y); // y
     
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,4); // type
+    write_ushort(global.ServerSocket,2); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
-    write_short(global.ServerSocket,x+10); // x
-    write_short(global.ServerSocket,y+30); // y
+    write_short(global.ServerSocket,x+45); // x
+    write_short(global.ServerSocket,y + bbox_y); // y
     
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,3); // type
+    write_ushort(global.ServerSocket,2); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
-    write_short(global.ServerSocket,x+30); // x
-    write_short(global.ServerSocket,y+30); // y
+    write_short(global.ServerSocket,x+135); // x
+    write_short(global.ServerSocket,y + bbox_y); // y
     
     // create haus
     write_ushort(global.ServerSocket,808); // message header: create building

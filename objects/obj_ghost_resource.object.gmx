@@ -127,8 +127,29 @@ else if (cliff_sight) {
 
     nearestAlly = instance_nearest(x,y,obj_ally)
     if (distance_to_object(nearestAlly) &lt; 300) {
-        obj_fog_of_war.alarm[1] = 1;
+        //obj_fog_of_war.alarm[1] = 1;
+        
+        draw_set_blend_mode(bm_subtract);
+        draw_set_alpha(1);
+        
+        if (!cliff_sight) {
+            surface_set_target(global.building_surface);
+            draw_sprite_ext(sprite_copy,sprite_copy_sub,x,y-sprite_copy_offset,1,1,0,c_white,1)
+            //draw_sprite_ext(sprite_copy,sprite_copy_sub,x,y-sprite_copy_offset,1,1,0,c_black,.7)
+            surface_reset_target()
+        }
+        
+        else if (cliff_sight) {
+            surface_set_target(global.cliff_fog_asset)
+            draw_sprite_ext(sprite_copy,sprite_copy_sub,x/2,(y-sprite_copy_offset)/2,1/2,1/2,0,c_white,1)
+            //draw_sprite_ext(sprite_copy,sprite_copy_sub,x/2,(y-sprite_copy_offset)/2,1/2,1/2,0,c_black,.7)
+            surface_reset_target()
+        }
+        
+        draw_set_blend_mode(bm_normal);
+        
         instance_destroy()
+        
     }
 }
 </string>

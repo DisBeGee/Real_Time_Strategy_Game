@@ -749,9 +749,14 @@ else if (msg==1008) // update unit cast type 2 state
 }
 else if (msg==1020) // sync position
 {
+    
     unitId = global.netid_table[read_ushort(argument1)];
-    unitId.x = read_short(argument1);
-    unitId.y = read_short(argument1);
+    truex = read_short(argument1)
+    truey = read_short(argument1)
+    if (instance_exists(unitId)) {
+        unitId.x = truex;
+        unitId.y = truey;
+    }
 }
 else if (msg==1021) // sync health
 {

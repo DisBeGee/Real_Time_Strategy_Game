@@ -106,7 +106,7 @@ surface_reset_target()
 
 //DBG This is for PERMANENT COPY of original room surface
 
-alarm[1] = 30
+alarm[1] =  30
 
 /*
 surface_set_target(global.static_surface);
