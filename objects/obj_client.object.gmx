@@ -383,10 +383,16 @@ else if (global.ClientState==8)
     // initialize network id's
     if (netid_initialization==false)
     {
-        with(global.obj_unit_type[0,global.PlayerId]) // for all owned units
+        with(global.obj_unit_type[0,global.PlayerId]) // for all owned ground units
         {
             write_ushort(global.ServerSocket,800); // message header: initialize net id
             write_uint(global.ServerSocket,self.id); // unit id
+        }
+        
+        with(global.obj_unit_type[6,global.PlayerId]) // for all flying units
+        {
+            write_ushort(global.ServerSocket,800);
+            write_uint(global.ServerSocket,self.id);
         }
         
         with(global.obj_building_type[0,global.PlayerId]) // for all owned buildings

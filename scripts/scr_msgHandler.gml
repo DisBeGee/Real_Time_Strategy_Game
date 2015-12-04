@@ -604,13 +604,15 @@ else if (msg==1000) // update unit move state
 else if (msg==1001) // update unit attack state
 {
     unitId = global.netid_table[read_ushort(argument1)];
-    
-    // turn off other states
-    unitId.gathering = false;
-    unitId.build_ing = false;
-    
-    unitId.attack_mode = true;
-    unitId.attack_target = global.netid_table[read_ushort(argument1)];
+    tarUnit = read_ushort(argument1);
+    if (instance_exists(unitId)) {
+        // turn off other states
+        unitId.gathering = false;
+        unitId.build_ing = false;
+        
+        unitId.attack_mode = true;
+        unitId.attack_target = global.netid_table[tarUnit];
+    }
 }
 else if (msg==1002) // update unit for damage taken
 {    

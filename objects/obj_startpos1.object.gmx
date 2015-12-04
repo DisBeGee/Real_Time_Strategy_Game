@@ -32,25 +32,25 @@ if (posId==global.random_start)
 {
     // create units
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,2); // type
+    write_ushort(global.ServerSocket,5); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
     write_short(global.ServerSocket,x-30); // x
     write_short(global.ServerSocket,y+30); // y
     
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,2); // type
+    write_ushort(global.ServerSocket,5); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
     write_short(global.ServerSocket,x-10); // x
     write_short(global.ServerSocket,y+30); // y
     
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,2); // type
+    write_ushort(global.ServerSocket,4); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
     write_short(global.ServerSocket,x+10); // x
     write_short(global.ServerSocket,y+30); // y
     
     write_ushort(global.ServerSocket,802); // message header: create unit
-    write_ushort(global.ServerSocket,2); // type
+    write_ushort(global.ServerSocket,3); // type
     write_ubyte(global.ServerSocket,global.PlayerId); // owner
     write_short(global.ServerSocket,x+30); // x
     write_short(global.ServerSocket,y+30); // y

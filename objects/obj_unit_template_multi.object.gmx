@@ -1146,6 +1146,18 @@ if (team != ENEMY)
     surface_reset_target();
 
 }
+
+// Cliff_Sight for enemies
+else {
+    if (collision_point(x,y,EntireCliffs,true,true)) {
+        cliff_sight = true;
+    }
+    else {
+        cliff_sight = false;
+    }
+
+}
+
 // Fog of War Minimap - End
 
 

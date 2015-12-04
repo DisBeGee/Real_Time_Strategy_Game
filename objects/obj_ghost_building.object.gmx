@@ -85,7 +85,7 @@ building_ghost_h = 0;
             <kind>1</kind>
             <string>//This alarm draws building to surface ONCE
 
-sprite_copy_dark = asset_get_index(sprite_get_name(sprite_copy) + "_dark");
+//sprite_copy_dark = asset_get_index(sprite_get_name(sprite_copy) + "_dark");
 
 if (!sprite_copy_cliff_sight) {
     surface_set_target(global.building_surface);
@@ -95,9 +95,9 @@ if (!sprite_copy_cliff_sight) {
 }
 
 else {
-    surface_set_target(global.cliff_asset_surface);
-    draw_sprite_ext(sprite_copy,sprite_copy_sub,x,y,1,1,0,c_white,1)
-    draw_sprite_ext(sprite_copy,sprite_copy_sub,x,y,1,1,0,c_black,.7)
+    surface_set_target(global.cliff_fog_asset);
+    draw_sprite_ext(sprite_copy,sprite_copy_sub,x/2,y/2,1/2,1/2,0,c_white,1)
+    draw_sprite_ext(sprite_copy,sprite_copy_sub,x/2,y/2,1/2,1/2,0,c_black,.7)
     surface_reset_target()
 }
 </string>

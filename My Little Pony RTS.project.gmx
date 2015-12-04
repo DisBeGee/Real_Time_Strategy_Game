@@ -509,6 +509,9 @@
     <script>scripts\all_collision_ellipse.gml</script>
     <script>scripts\scr_get_other_resource.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\font_chat_message</font>
     <font>fonts\font_equestria</font>
@@ -577,6 +580,8 @@
         <object>objects\obj_curs_gotomarker</object>
       </objects>
       <object>objects\obj_surface_fog</object>
+      <object>objects\shader_start</object>
+      <object>objects\shader_end</object>
     </objects>
     <objects name="Projectiles">
       <objects name="Template">

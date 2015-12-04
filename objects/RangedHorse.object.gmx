@@ -152,7 +152,22 @@
 /*var*/ atk_spr_rng_hit = 4; // the image num where the unit would of shot the projectile - RANGED ONLY
 /*var*/ 
 /*var*/ 
-/*var*/ 
+/*var*/ atk_proj_x[0] = 0; //DOWN
+/*var*/ atk_proj_y[0] = 0;
+/*var*/ atk_proj_x[1] = 0; //DOWNRIGHT
+/*var*/ atk_proj_y[1] = 0;
+/*var*/ atk_proj_x[2] = 0; //RIGHT
+/*var*/ atk_proj_y[2] = -70;
+/*var*/ atk_proj_x[3] = 0; //UPRIGHT
+/*var*/ atk_proj_y[3] = -70;
+/*var*/ atk_proj_x[4] = 0; //UP
+/*var*/ atk_proj_y[4] = 0;
+/*var*/ atk_proj_x[5] = 0; //UPLEFT
+/*var*/ atk_proj_y[5] = -70;
+/*var*/ atk_proj_x[6] = 0; //LEFT
+/*var*/ atk_proj_y[6] = -70;
+/*var*/ atk_proj_x[7] = 0; //DOWNLEFT
+/*var*/ atk_proj_y[7] = 0;
 /*var*/ 
 /*var*/ 
 /*var*/ 
